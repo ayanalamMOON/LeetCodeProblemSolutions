@@ -1,4 +1,4 @@
-package LEETCODE.Rgegular_Practice_Problems.Problem1;
+package Rgegular_Practice_Problems.Problem1;
 
 import java.util.*;
 

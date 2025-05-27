@@ -1,4 +1,4 @@
-package LEETCODE.Daily_Problems.DailyProblem5;
+package Daily_Problems.DailyProblem5;
 
 import java.util.*;
 
