@@ -1,7 +1,8 @@
 # 1717. Maximum Score From Removing Substrings
 
-`Solved`  
-`Medium`
+**Difficulty**: Medium
+
+`Solved`
 
 ## Topics
 - Strings

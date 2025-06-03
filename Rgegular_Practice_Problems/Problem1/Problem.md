@@ -1,8 +1,8 @@
 # 1639. Number of Ways to Form a Target String Given a Dictionary
 
-**Difficulty:** Hard  
-**Topics:** Dynamic Programming, String  
-**Companies:** Premium Lock  
+**Difficulty**: Hard  
+**Topics**: Dynamic Programming, String  
+**Companies**: Premium Lock
 
 ## Problem Statement
 

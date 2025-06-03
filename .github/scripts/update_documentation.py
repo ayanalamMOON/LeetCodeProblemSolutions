@@ -213,8 +213,12 @@ class DocumentationUpdater:
             
             return "\n".join(rows)
         
-        replacement = r"\1" + create_table_rows() + r"\3"
-        return re.sub(table_pattern, replacement, content, flags=re.DOTALL)
+        table_rows = create_table_rows()
+        
+        def replacement_func(match):
+            return match.group(1) + table_rows + match.group(3)
+        
+        return re.sub(table_pattern, replacement_func, content, flags=re.DOTALL)
     
     def _update_readme_statistics(self, content: str) -> str:
         """Update repository statistics"""

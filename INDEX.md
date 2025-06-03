@@ -19,7 +19,7 @@ This document serves as a comprehensive index and navigation guide for the LeetC
 #### Easy Problems
 | Problem # | Title | Topics | Folder | Status |
 |-----------|-------|--------|--------|--------|
-| 2894 | [Divisible and Non-divisible Sums Difference](LEETCODE/Daily_Problems/DailyProblem5/) | Math, Array | DailyProblem5 | ✅ Complete |
+| 2894 | [Divisible and Non-divisible Sums Difference](Daily_Problems/DailyProblem5/) | Math, Array | DailyProblem5 | ✅ Complete |
 
 #### Medium Problems
 | Problem # | Title | Topics | Folder | Status |
@@ -29,9 +29,9 @@ This document serves as a comprehensive index and navigation guide for the LeetC
 #### Hard Problems
 | Problem # | Title | Topics | Folder | Status |
 |-----------|-------|--------|--------|--------|
-| 1639 | [Number of Ways to Form a Target String](LEETCODE/Rgegular_Practice_Problems/Problem1/) | Dynamic Programming, String | Problem1 | ✅ Complete |
-| 1298 | [Maximum Candies You Can Get from Boxes](LEETCODE/Daily_Problems/DailyProblem6/) | BFS, DFS, Graph | DailyProblem6 | ✅ Complete |
-| 1298 | [Maximum Candies You Can Get from Boxes](LEETCODE/Daily_Problems/DailyProblem6/) | BFS, DFS, Graph | DailyProblem6 | ✅ Complete |
+| 1639 | [Number of Ways to Form a Target String](Rgegular_Practice_Problems/Problem1/) | Dynamic Programming, String | Problem1 | ✅ Complete |
+| 1298 | [Maximum Candies You Can Get from Boxes](Daily_Problems/DailyProblem6/) | BFS, DFS, Graph | DailyProblem6 | ✅ Complete |
+| 1298 | [Maximum Candies You Can Get from Boxes](Daily_Problems/DailyProblem6/) | BFS, DFS, Graph | DailyProblem6 | ✅ Complete |
 
 ### By Topic Category
 
@@ -58,7 +58,7 @@ This document serves as a comprehensive index and navigation guide for the LeetC
 ### By Problem Source
 
 #### Daily Challenge Problems
-Located in `LEETCODE/Daily_Problems/`
+Located in `Daily_Problems/`
 
 | Folder | Problem # | Title | Date Added | Completion |
 |--------|-----------|-------|------------|------------|
@@ -71,7 +71,7 @@ Located in `LEETCODE/Daily_Problems/`
 | DailyProblem6 | 1298 | Maximum Candies You Can Get from Boxes | June 2025 | ✅ Complete |
 
 #### Practice Problems
-Located in `LEETCODE/Rgegular_Practice_Problems/`
+Located in `Rgegular_Practice_Problems/`
 
 | Folder | Problem # | Title | Focus Area | Completion |
 |--------|-----------|-------|------------|------------|
@@ -89,7 +89,7 @@ Located in `LEETCODE/Rgegular_Practice_Problems/`
 - **Planned**: Substring problems, array optimization
 
 ### Dynamic Programming
-- ✅ **[Problem 1639](LEETCODE/Rgegular_Practice_Problems/Problem1/)**: 2D DP with space optimization
+- ✅ **[Problem 1639](Rgegular_Practice_Problems/Problem1/)**: 2D DP with space optimization
 - **Patterns covered**: 2D DP, space optimization, memoization
 
 ### Hash Table/Map
@@ -97,7 +97,7 @@ Located in `LEETCODE/Rgegular_Practice_Problems/`
 - **Patterns**: Frequency counting, lookup optimization
 
 ### Mathematical Optimization
-- ✅ **[Problem 2894](LEETCODE/Daily_Problems/DailyProblem5/)**: O(n) to O(1) optimization
+- ✅ **[Problem 2894](Daily_Problems/DailyProblem5/)**: O(n) to O(1) optimization
 - **Patterns covered**: Arithmetic series, modular arithmetic
 
 ### Graph Algorithms
@@ -155,13 +155,13 @@ Located in `LEETCODE/Rgegular_Practice_Problems/`
 ## 🎯 Learning Pathways
 
 ### For Beginners
-1. **Start with**: [Problem 2894](LEETCODE/Daily_Problems/DailyProblem5/) (Easy Math)
+1. **Start with**: [Problem 2894](Daily_Problems/DailyProblem5/) (Easy Math)
 2. **Learn**: Basic algorithm analysis, O(1) optimization
 3. **Languages**: Begin with Python or JavaScript
 4. **Focus**: Understanding problem-solving approach
 
 ### For Intermediate Developers
-1. **Start with**: [Problem 1639](LEETCODE/Rgegular_Practice_Problems/Problem1/) (Dynamic Programming)
+1. **Start with**: [Problem 1639](Rgegular_Practice_Problems/Problem1/) (Dynamic Programming)
 2. **Learn**: Space optimization, multiple approaches
 3. **Languages**: Try C++ or Java for performance insights
 4. **Focus**: Algorithm optimization and complexity analysis
@@ -200,7 +200,7 @@ Repository Root/
 ├── 📄 LANGUAGE_GUIDE.md            # Language-specific guides
 ├── 📄 PERFORMANCE_ANALYSIS.md      # Cross-language analysis
 ├── 📄 INDEX.md                     # This navigation file
-└── 📁 LEETCODE/
+└── 📁 LeetCodeProblemSolutions/
     ├── 📁 Daily_Problems/          # LeetCode daily challenges
     │   ├── 📁 DailyProblem1/       # Placeholder
     │   ├── 📁 DailyProblem2/       # Placeholder

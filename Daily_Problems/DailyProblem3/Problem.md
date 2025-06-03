@@ -1,7 +1,8 @@
 # 2751. Robot Collisions
 
+**Difficulty**: Hard
+
 - `Solved`
-- `Hard`
 - `Topics`
 - `Companies`
 

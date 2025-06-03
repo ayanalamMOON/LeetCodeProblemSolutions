@@ -1,8 +1,8 @@
 # 2894. Divisible and Non-divisible Sums Difference
 
-**Difficulty:** Easy  
-**Topics:** Math, Array  
-**Companies:** Premium Lock  
+**Difficulty**: Easy  
+**Topics**: Math, Array  
+**Companies**: Premium Lock
 
 ## Problem Statement
 

@@ -23,35 +23,66 @@ A comprehensive collection of LeetCode problem solutions implemented in multiple
 ## 🗂️ Repository Structure
 
 ```
-LeetCodeProblemSolutions/
-├── README.md                          # This file
-├── CONTRIBUTING.md                     # Contribution guidelines
-├── LANGUAGE_GUIDE.md                   # Language-specific guides
-├── PERFORMANCE_ANALYSIS.md             # Cross-language performance analysis
-└── LEETCODE/    ├── Daily_Problems/                 # LeetCode Daily Challenge problems
-    │   ├── DailyProblem1/
-    │   ├── DailyProblem2/
-    │   ├── DailyProblem3/
-    │   ├── DailyProblem4/
-    │   ├── DailyProblem5/              # Problem 2894: Divisible and Non-divisible Sums
-    │   └── DailyProblem6/              # Problem 1298: Maximum Candies from Boxes
-    │       ├── Problem.md              # Problem statement and examples
-    │       ├── Procedure.md            # Solution approach and analysis
-    │       ├── InCPP.cpp               # C++ implementation
-    │       ├── InJava.java             # Java implementation
-    │       ├── InPython.py             # Python implementation
-    │       ├── InJS.js                 # JavaScript implementation
-    │       └── InRust.rs               # Rust implementation
-    └── Rgegular_Practice_Problems/     # Regular practice problems
-        ├── Problem1/                   # Problem 1639: Target String Formation
-        │   ├── Problem.md              # Problem statement and examples
-        │   ├── Procedure.md            # Solution approach and analysis
-        │   ├── InC++.cpp               # C++ implementation
-        │   ├── InJava.java             # Java implementation
-        │   ├── InPython.py             # Python implementation
-        │   ├── InJS.js                 # JavaScript implementation
-        │   └── InRust.rs               # Rust implementation
-        └── Problem2/                   # Future problems
+# Code Citations.md
+CONTRIBUTING.md
+INDEX.md
+InterviewPreparation.md
+LANGUAGE_GUIDE.md
+PERFORMANCE_ANALYSIS.md
+README.md
+Daily_Problems/
+	DailyProblem4/
+		Problem.md
+		InCPP.cpp
+		InJava.java
+		InPython.py
+		InJS.js
+		InRust.rs
+		Procedure.md
+	DailyProblem1/
+		Problem.md
+		InCPP.cpp
+		InC.c
+		InJava.java
+		InPython.py
+		Procedure.md
+	DailyProblem6/
+		Problem.md
+		InCPP.cpp
+		InJava.java
+		InPython.py
+		InJS.js
+		InRust.rs
+		Procedure.md
+	DailyProblem2/
+		Problem.md
+		InCPP.cpp
+		InJava.java
+		InPython.py
+		InRust.rs
+		Procedure.md
+	DailyProblem3/
+		Problem.md
+		InCPP.cpp
+		InC.c
+		InJava.java
+		InPython.py
+		InJS.js
+		InRust.rs
+		Procedure.md
+	DailyProblem5/
+		Problem.md
+		InCPP.cpp
+		InJava.java
+		InPython.py
+		InJS.js
+		InRust.rs
+		Procedure.md
+Regular_Practice_Problems/
+	Problem2/
+		Problem.md
+	Problem1/
+		Problem.md
 ```
 
 ## 🎯 Problem Categories
@@ -59,14 +90,14 @@ LeetCodeProblemSolutions/
 ### Daily Problems
 | Problem | Title | Difficulty | Topics | Languages |
 |---------|-------|------------|--------|-----------|
-| [2894](LEETCODE/Daily_Problems/DailyProblem5/) | Divisible and Non-divisible Sums Difference | Easy | Math, Array | C++, Java, Python, JS, Rust |
-| [1298](LEETCODE/Daily_Problems/DailyProblem6/) | Maximum Candies You Can Get from Boxes | Hard | BFS, DFS, Graph | C++, Java, Python, JS, Rust |
-| [1298](LEETCODE/Daily_Problems/DailyProblem6/) | Maximum Candies You Can Get from Boxes | Hard | BFS, DFS, Graph | C++, Java, Python, JS, Rust |
+| [2894](Daily_Problems/DailyProblem5/) | Divisible and Non-divisible Sums Difference | Easy | Math, Array | C++, Java, Python, JS, Rust |
+| [1298](Daily_Problems/DailyProblem6/) | Maximum Candies You Can Get from Boxes | Hard | BFS, DFS, Graph | C++, Java, Python, JS, Rust |
+| [1298](Daily_Problems/DailyProblem6/) | Maximum Candies You Can Get from Boxes | Hard | BFS, DFS, Graph | C++, Java, Python, JS, Rust |
 
 ### Practice Problems
 | Problem | Title | Difficulty | Topics | Languages |
 |---------|-------|------------|--------|-----------|
-| [1639](LEETCODE/Rgegular_Practice_Problems/Problem1/) | Number of Ways to Form a Target String | Hard | Dynamic Programming, String | C++, Java, Python, JS, Rust |
+| [1639](Rgegular_Practice_Problems/Problem1/) | Number of Ways to Form a Target String | Hard | Dynamic Programming, String | C++, Java, Python, JS, Rust |
 
 ## 🚀 Quick Start
 
@@ -81,33 +112,33 @@ LeetCodeProblemSolutions/
 
 #### C++
 ```bash
-cd LEETCODE/Daily_Problems/DailyProblem5/
+cd Daily_Problems/DailyProblem5/
 g++ -std=c++17 -O2 inC++.cpp -o solution
 ./solution
 ```
 
 #### Java
 ```bash
-cd LEETCODE/Daily_Problems/DailyProblem5/
+cd Daily_Problems/DailyProblem5/
 javac InJava.java
 java InJava
 ```
 
 #### Python
 ```bash
-cd LEETCODE/Daily_Problems/DailyProblem5/
+cd Daily_Problems/DailyProblem5/
 python InPython.py
 ```
 
 #### JavaScript
 ```bash
-cd LEETCODE/Daily_Problems/DailyProblem5/
+cd Daily_Problems/DailyProblem5/
 node InJS.js
 ```
 
 #### Rust
 ```bash
-cd LEETCODE/Daily_Problems/DailyProblem5/
+cd Daily_Problems/DailyProblem5/
 rustc InRust.rs -O
 ./InRust
 ```

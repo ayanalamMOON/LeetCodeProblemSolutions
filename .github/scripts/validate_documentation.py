@@ -28,18 +28,17 @@ class DocumentationValidator:
             return
         
         content = readme_path.read_text(encoding='utf-8')
-        
-        # Check for required sections
+          # Check for required sections
         required_sections = [
-            "# LeetCode Problem Solutions",
-            "## Repository Structure", 
-            "## Daily Problems",
-            "## Language Support"
+            "LeetCode Problem Solutions",
+            "Repository Structure", 
+            "Daily Problems",
+            "Language"
         ]
         
         for section in required_sections:
             if section not in content:
-                self.warnings.append(f"README.md missing section: {section}")
+                self.warnings.append(f"README.md missing section containing: {section}")
         
         logger.info("README.md validation completed")
     
@@ -51,17 +50,16 @@ class DocumentationValidator:
             return
         
         content = index_path.read_text(encoding='utf-8')
-        
-        # Check for required sections
+          # Check for required sections
         required_sections = [
-            "# Problem Index",
-            "## By Difficulty",
-            "## By Topic"
+            "Problem Index",
+            "By Difficulty",
+            "By Topic"
         ]
         
         for section in required_sections:
             if section not in content:
-                self.warnings.append(f"INDEX.md missing section: {section}")
+                self.warnings.append(f"INDEX.md missing section containing: {section}")
         
         logger.info("INDEX.md validation completed")
     

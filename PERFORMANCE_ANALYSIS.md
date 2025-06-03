@@ -604,3 +604,55 @@ The "best" language depends on your specific use case, team, and requirements. T
 
 *Last Updated: May 27, 2025*  
 *Benchmark Environment: Intel i7-10700K, 32GB RAM, Ubuntu 22.04*
+
+### Problem 1190: Reverse Substrings Between Each Pair of Parentheses
+
+| Language | Time Complexity | Space Complexity | Runtime | Memory |
+|----------|----------------|------------------|---------|--------|
+| C++ | O(n) | O(1) | TBD ms | TBD MB |
+| Java | O(n) | O(1) | TBD ms | TBD MB |
+| Python | O(n) | O(1) | TBD ms | TBD MB |
+| JavaScript | O(n) | O(1) | TBD ms | TBD MB |
+| Rust | O(n) | O(1) | TBD ms | TBD MB |
+
+**Analysis**: Performance analysis pending - please run benchmarks and update.
+
+
+### Problem 1717: Maximum Score From Removing Substrings
+
+| Language | Time Complexity | Space Complexity | Runtime | Memory |
+|----------|----------------|------------------|---------|--------|
+| C++ | O(n) | O(1) | TBD ms | TBD MB |
+| Java | O(n) | O(1) | TBD ms | TBD MB |
+| Python | O(n) | O(1) | TBD ms | TBD MB |
+| JavaScript | O(n) | O(1) | TBD ms | TBD MB |
+| Rust | O(n) | O(1) | TBD ms | TBD MB |
+
+**Analysis**: Performance analysis pending - please run benchmarks and update.
+
+
+### Problem 2751: Robot Collisions
+
+| Language | Time Complexity | Space Complexity | Runtime | Memory |
+|----------|----------------|------------------|---------|--------|
+| C++ | O(n) | O(1) | TBD ms | TBD MB |
+| Java | O(n) | O(1) | TBD ms | TBD MB |
+| Python | O(n) | O(1) | TBD ms | TBD MB |
+| JavaScript | O(n) | O(1) | TBD ms | TBD MB |
+| Rust | O(n) | O(1) | TBD ms | TBD MB |
+
+**Analysis**: Performance analysis pending - please run benchmarks and update.
+
+
+### Problem 726: Number of Atoms
+
+| Language | Time Complexity | Space Complexity | Runtime | Memory |
+|----------|----------------|------------------|---------|--------|
+| C++ | O(n) | O(1) | TBD ms | TBD MB |
+| Java | O(n) | O(1) | TBD ms | TBD MB |
+| Python | O(n) | O(1) | TBD ms | TBD MB |
+| JavaScript | O(n) | O(1) | TBD ms | TBD MB |
+| Rust | O(n) | O(1) | TBD ms | TBD MB |
+
+**Analysis**: Performance analysis pending - please run benchmarks and update.
+

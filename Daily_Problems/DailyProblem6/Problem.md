@@ -1,7 +1,7 @@
 # 1298. Maximum Candies You Can Get from Boxes
 
-**Difficulty:** Hard  
-**Topics:** Array, BFS, DFS  
+**Difficulty**: Hard  
+**Topics**: Array, BFS, DFS
 
 ## Problem Description
 
