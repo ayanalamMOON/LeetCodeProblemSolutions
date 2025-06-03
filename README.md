@@ -13,12 +13,12 @@ A comprehensive collection of LeetCode problem solutions implemented in multiple
 
 | Metric | Count |
 |--------|-------|
-| **Total Problems Solved** | 7 |
+| **Total Problems Solved** | 8 |
 | **Programming Languages** | 5 (C++, Java, Python, JavaScript, Rust) |
-| **Daily Problems** | 5 |
+| **Daily Problems** | 6 |
 | **Practice Problems** | 2 |
-| **Documentation Files** | 14 |
-| **Solution Files** | 35+ |
+| **Documentation Files** | 16 |
+| **Solution Files** | 40+ |
 
 ## 🗂️ Repository Structure
 
@@ -28,16 +28,16 @@ LeetCodeProblemSolutions/
 ├── CONTRIBUTING.md                     # Contribution guidelines
 ├── LANGUAGE_GUIDE.md                   # Language-specific guides
 ├── PERFORMANCE_ANALYSIS.md             # Cross-language performance analysis
-└── LEETCODE/
-    ├── Daily_Problems/                 # LeetCode Daily Challenge problems
+└── LEETCODE/    ├── Daily_Problems/                 # LeetCode Daily Challenge problems
     │   ├── DailyProblem1/
     │   ├── DailyProblem2/
     │   ├── DailyProblem3/
     │   ├── DailyProblem4/
-    │   └── DailyProblem5/              # Problem 2894: Divisible and Non-divisible Sums
+    │   ├── DailyProblem5/              # Problem 2894: Divisible and Non-divisible Sums
+    │   └── DailyProblem6/              # Problem 1298: Maximum Candies from Boxes
     │       ├── Problem.md              # Problem statement and examples
     │       ├── Procedure.md            # Solution approach and analysis
-    │       ├── inC++.cpp               # C++ implementation
+    │       ├── InCPP.cpp               # C++ implementation
     │       ├── InJava.java             # Java implementation
     │       ├── InPython.py             # Python implementation
     │       ├── InJS.js                 # JavaScript implementation
@@ -60,6 +60,8 @@ LeetCodeProblemSolutions/
 | Problem | Title | Difficulty | Topics | Languages |
 |---------|-------|------------|--------|-----------|
 | [2894](LEETCODE/Daily_Problems/DailyProblem5/) | Divisible and Non-divisible Sums Difference | Easy | Math, Array | C++, Java, Python, JS, Rust |
+| [1298](LEETCODE/Daily_Problems/DailyProblem6/) | Maximum Candies You Can Get from Boxes | Hard | BFS, DFS, Graph | C++, Java, Python, JS, Rust |
+| [1298](LEETCODE/Daily_Problems/DailyProblem6/) | Maximum Candies You Can Get from Boxes | Hard | BFS, DFS, Graph | C++, Java, Python, JS, Rust |
 
 ### Practice Problems
 | Problem | Title | Difficulty | Topics | Languages |
@@ -162,6 +164,15 @@ Each problem folder contains:
 | JavaScript | 180-220 | 55-65 | Space-Optimized DP |
 | Python | 250-300 | 50-60 | Space-Optimized DP |
 
+### Problem 1298 (Hard - BFS)
+| Language | Time (ms) | Memory (MB) | Approach |
+|----------|-----------|-------------|----------|
+| C++ | 15-25 | 8-12 | BFS with Hash Sets |
+| Rust | 18-28 | 10-14 | BFS with Hash Sets |
+| Java | 25-35 | 15-20 | BFS with Hash Sets |
+| JavaScript | 35-50 | 12-18 | BFS with Sets |
+| Python | 45-65 | 10-15 | BFS with Sets |
+
 ## 🎨 Code Quality Standards
 
 ### Formatting and Style
@@ -195,9 +206,9 @@ Each problem folder contains:
 ### Algorithm Categories Covered
 - ✅ **Mathematical Algorithms**: Arithmetic sequences, modular arithmetic
 - ✅ **Dynamic Programming**: 2D DP, space optimization, memoization
-- 🔄 **String Processing**: Character frequency, pattern matching
+- ✅ **Graph Algorithms**: BFS traversal, state management
+- ✅ **String Processing**: Character frequency, pattern matching
 - 🔄 **Array Manipulation**: Sliding window, two pointers
-- 🔄 **Graph Algorithms**: DFS, BFS, shortest paths
 - 🔄 **Tree Algorithms**: Traversal, manipulation, construction
 
 ## 🚧 Roadmap

@@ -30,6 +30,8 @@ This document serves as a comprehensive index and navigation guide for the LeetC
 | Problem # | Title | Topics | Folder | Status |
 |-----------|-------|--------|--------|--------|
 | 1639 | [Number of Ways to Form a Target String](LEETCODE/Rgegular_Practice_Problems/Problem1/) | Dynamic Programming, String | Problem1 | ✅ Complete |
+| 1298 | [Maximum Candies You Can Get from Boxes](LEETCODE/Daily_Problems/DailyProblem6/) | BFS, DFS, Graph | DailyProblem6 | ✅ Complete |
+| 1298 | [Maximum Candies You Can Get from Boxes](LEETCODE/Daily_Problems/DailyProblem6/) | BFS, DFS, Graph | DailyProblem6 | ✅ Complete |
 
 ### By Topic Category
 
@@ -65,6 +67,8 @@ Located in `LEETCODE/Daily_Problems/`
 | DailyProblem3 | TBD | TBD | TBD | 🔄 Placeholder |
 | DailyProblem4 | TBD | TBD | TBD | 🔄 Placeholder |
 | DailyProblem5 | 2894 | Divisible and Non-divisible Sums | May 2025 | ✅ Complete |
+| DailyProblem6 | 1298 | Maximum Candies You Can Get from Boxes | June 2025 | ✅ Complete |
+| DailyProblem6 | 1298 | Maximum Candies You Can Get from Boxes | June 2025 | ✅ Complete |
 
 #### Practice Problems
 Located in `LEETCODE/Rgegular_Practice_Problems/`
@@ -97,7 +101,9 @@ Located in `LEETCODE/Rgegular_Practice_Problems/`
 - **Patterns covered**: Arithmetic series, modular arithmetic
 
 ### Graph Algorithms
-- **Available**: None currently
+| Problem # | Title | Difficulty | Graph Techniques | Pattern |
+|-----------|-------|------------|------------------|---------|
+| 1298 | Maximum Candies from Boxes | Hard | BFS, State Management | Graph Traversal |
 - **Planned**: DFS/BFS problems, shortest path algorithms
 
 ### Tree Algorithms
@@ -111,7 +117,8 @@ Located in `LEETCODE/Rgegular_Practice_Problems/`
 |---------|-----|------|--------|------------|------|-------|
 | 2894 | ✅ | ✅ | ✅ | ✅ | ✅ | 5/5 |
 | 1639 | ✅ | ✅ | ✅ | ✅ | ✅ | 5/5 |
-| **Total** | **2/2** | **2/2** | **2/2** | **2/2** | **2/2** | **10/10** |
+| 1298 | ✅ | ✅ | ✅ | ✅ | ✅ | 5/5 |
+| **Total** | **3/3** | **3/3** | **3/3** | **3/3** | **3/3** | **15/15** |
 
 ### Language-Specific Features Demonstrated
 
@@ -198,11 +205,11 @@ Repository Root/
     │   ├── 📁 DailyProblem1/       # Placeholder
     │   ├── 📁 DailyProblem2/       # Placeholder
     │   ├── 📁 DailyProblem3/       # Placeholder
-    │   ├── 📁 DailyProblem4/       # Placeholder
-    │   └── 📁 DailyProblem5/       # Problem 2894 (Complete)
+    │   ├── 📁 DailyProblem4/       # Placeholder    │   ├── 📁 DailyProblem5/       # Problem 2894 (Complete)
+    │   └── 📁 DailyProblem6/       # Problem 1298 (Complete)
     │       ├── 📄 Problem.md       # Problem statement
     │       ├── 📄 Procedure.md     # Solution methodology
-    │       ├── 🔧 inC++.cpp        # C++ implementation
+    │       ├── 🔧 InCPP.cpp        # C++ implementation
     │       ├── ☕ InJava.java       # Java implementation
     │       ├── 🐍 InPython.py      # Python implementation
     │       ├── 🌐 InJS.js          # JavaScript implementation
@@ -253,11 +260,11 @@ Repository Root/
 ## 📈 Repository Statistics
 
 ### Current Status
-- **Total Problems**: 2 (1 Easy, 1 Hard)
+- **Total Problems**: 3 (1 Easy, 2 Hard)
 - **Total Languages**: 5 (C++, Java, Python, JavaScript, Rust)
-- **Total Implementation Files**: 10
-- **Total Documentation Files**: 4 problem docs + 5 repository docs
-- **Lines of Code**: ~2,000 (including tests and documentation)
+- **Total Implementation Files**: 15
+- **Total Documentation Files**: 6 problem docs + 5 repository docs
+- **Lines of Code**: ~3,500 (including tests and documentation)
 
 ### Growth Metrics
 - **Problems per Month**: Target 4-6 new problems

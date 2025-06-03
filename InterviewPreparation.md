@@ -251,6 +251,7 @@ Sunday (1 hour):      Strategic Planning + Weakness Analysis
    - Shortest path in unweighted graphs
    - Multi-source BFS
    - Topological sorting
+   - State management with BFS (Problem 1298: Maximum Candies)
    ```
 
 #### **Important Algorithms (70-89% interview appearance)**
@@ -285,6 +286,7 @@ Sunday (1 hour):      Strategic Planning + Weakness Analysis
    - Bellman-Ford algorithm
    - Floyd-Warshall algorithm
    - Minimum spanning tree (Kruskal, Prim)
+   - BFS with state management (e.g., Problem 1298: Maximum Candies from Boxes)
    ```
 
 2. **Advanced Tree Algorithms**
@@ -549,8 +551,9 @@ def level_order_traversal(root):
 1. Design a web crawler (System Design)
 2. Find median from data stream (Data Structures)
 3. Word ladder problem (BFS/Graph)
-4. Maximum subarray product (Dynamic Programming)
-5. Design a distributed cache (System Design)
+4. Maximum candies from boxes (BFS/State Management - Problem 1298)
+5. Maximum subarray product (Dynamic Programming)
+6. Design a distributed cache (System Design)
 ```
 
 **Preparation Strategy**:
