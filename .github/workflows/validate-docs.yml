@@ -1,0 +1,50 @@
+name: Documentation Validation
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate-docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install markdown beautifulsoup4 requests
+
+    - name: Validate documentation
+      run: |
+        python .github/scripts/validate_documentation.py
+
+    - name: Check for broken links
+      run: |
+        python .github/scripts/check_links.py
+
+    - name: Validate problem structure
+      run: |
+        python .github/scripts/validate_problems.py
+
+    - name: Generate validation report
+      if: always()
+      run: |
+        echo "## 📋 Documentation Validation Report" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### ✅ Checks Performed" >> $GITHUB_STEP_SUMMARY
+        echo "- Documentation structure validation" >> $GITHUB_STEP_SUMMARY
+        echo "- Link integrity check" >> $GITHUB_STEP_SUMMARY
+        echo "- Problem directory structure validation" >> $GITHUB_STEP_SUMMARY
+        echo "- Markdown syntax validation" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "All validations completed! Check job logs for details." >> $GITHUB_STEP_SUMMARY

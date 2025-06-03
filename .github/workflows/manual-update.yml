@@ -1,0 +1,81 @@
+name: Manual Documentation Update
+
+on:
+  workflow_dispatch:
+    inputs:
+      update_type:
+        description: 'Type of update to perform'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+        - all
+        - readme
+        - index
+        - performance
+        - interview-prep
+      force_update:
+        description: 'Force update even if no changes detected'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  manual-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml requests
+
+    - name: Run manual documentation update
+      run: |
+        python .github/scripts/manual_update.py --type="${{ github.event.inputs.update_type }}" --force="${{ github.event.inputs.force_update }}"
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Add all modified documentation files
+        git add *.md || true
+        
+        # Check if there are any changes to commit
+        if git diff --staged --quiet; then
+          echo "No documentation changes to commit"
+        else
+          git commit -m "🔧 Manual documentation update
+
+          Update type: ${{ github.event.inputs.update_type }}
+          Force update: ${{ github.event.inputs.force_update }}
+          
+          Manually triggered documentation update 🚀"
+          
+          git push
+        fi
+
+    - name: Create summary
+      run: |
+        echo "## 🔧 Manual Documentation Update Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📋 Update Details" >> $GITHUB_STEP_SUMMARY
+        echo "- **Update Type**: ${{ github.event.inputs.update_type }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Force Update**: ${{ github.event.inputs.force_update }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 🚀 Status" >> $GITHUB_STEP_SUMMARY
+        echo "Manual documentation update completed! 🎉" >> $GITHUB_STEP_SUMMARY
