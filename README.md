@@ -6,8 +6,27 @@
 [![Languages](https://img.shields.io/badge/Languages-C++%2C%20Java%2C%20Python%2C%20JavaScript%2C%20Rust-blue.svg)](https://github.com)
 [![LeetCode](https://img.shields.io/badge/Platform-LeetCode-orange.svg)](https://leetcode.com)
 [![Last Updated](https://img.shields.io/badge/Last%20Updated-May%202025-green.svg)](https://github.com)
+[![CI/CD](https://img.shields.io/badge/CI%2FCD-Automated-brightgreen.svg)](CICD.md)
 
 A comprehensive collection of LeetCode problem solutions implemented in multiple programming languages with detailed explanations, optimizations, and cross-language performance comparisons.
+
+## 📋 Table of Contents
+
+- [Repository Statistics](#-repository-statistics)
+- [Repository Structure](#️-repository-structure)
+- [Problem Solutions](#-problem-solutions)
+- [Quick Start](#-quick-start)
+- [Documentation Structure](#-documentation-structure)
+- [Features](#-features)
+- [Performance Highlights](#-performance-highlights)
+- [Code Quality Standards](#-code-quality-standards)
+- [Unique Features](#-unique-features)
+- [Learning Resources](#-learning-resources)
+- [Documentation](#-documentation)
+- [Roadmap](#-roadmap)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Acknowledgments](#-acknowledgments)
 
 ## 📊 Repository Statistics
 
@@ -17,7 +36,7 @@ A comprehensive collection of LeetCode problem solutions implemented in multiple
 | **Programming Languages** | 5 (C++, Java, Python, JavaScript, Rust) |
 | **Daily Problems** | 6 |
 | **Practice Problems** | 2 |
-| **Documentation Files** | 16 |
+| **Documentation Files** | 17 |
 | **Solution Files** | 40+ |
 
 ## 🗂️ Repository Structure
@@ -242,7 +261,18 @@ Each problem folder contains:
 - 🔄 **Array Manipulation**: Sliding window, two pointers
 - 🔄 **Tree Algorithms**: Traversal, manipulation, construction
 
-## 🚧 Roadmap
+## � Documentation
+
+This repository includes comprehensive documentation for different aspects:
+
+- **[INDEX.md](INDEX.md)** - Organized problem listings and categorization
+- **[PERFORMANCE_ANALYSIS.md](PERFORMANCE_ANALYSIS.md)** - Detailed performance comparisons and analysis
+- **[InterviewPreparation.md](InterviewPreparation.md)** - Interview-focused study guides and tips
+- **[LANGUAGE_GUIDE.md](LANGUAGE_GUIDE.md)** - Language-specific implementation guides
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Guidelines for contributing to the repository
+- **[CICD.md](CICD.md)** - Comprehensive CI/CD pipeline documentation and automation details
+
+## �🚧 Roadmap
 
 ### Short Term (Next 30 days)
 - [ ] Add 10 more daily problems
@@ -260,7 +290,7 @@ Each problem folder contains:
 - [ ] Reach 100 solved problems
 - [ ] Add advanced data structures (Segment Tree, Fenwick Tree)
 - [ ] Create interactive problem selector
-- [ ] Implement CI/CD for automated testing
+- [ ] Add automated performance benchmarking system
 
 ## 🤝 Contributing
 
