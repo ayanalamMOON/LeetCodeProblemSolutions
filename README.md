@@ -75,11 +75,9 @@ Daily_Problems/
 		Procedure.md
 	DailyProblem2/
 		Problem.md
-		InCPP.cpp
 		InJava.java
 		InPython.py
 		InRust.rs
-		Procedure.md
 	DailyProblem3/
 		Problem.md
 		InCPP.cpp
