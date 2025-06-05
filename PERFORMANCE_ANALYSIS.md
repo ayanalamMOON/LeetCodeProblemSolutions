@@ -27,6 +27,7 @@ This document provides comprehensive performance analysis and benchmarking resul
 | 5th | Python | 45% | 90% | Very Low | Easy |
 
 ### Key Findings
+
 - **C++** consistently delivers the fastest execution times
 - **Rust** provides the best memory safety with near-C++ performance
 - **Java** offers the best balance of performance and maintainability
@@ -36,6 +37,7 @@ This document provides comprehensive performance analysis and benchmarking resul
 ## 🔬 Methodology
 
 ### Testing Environment
+
 - **Hardware**: Intel i7-10700K, 32GB RAM, NVMe SSD
 - **Operating System**: Ubuntu 22.04 LTS
 - **Compiler Versions**:
@@ -46,6 +48,7 @@ This document provides comprehensive performance analysis and benchmarking resul
   - Python 3.10.6 (Python)
 
 ### Benchmarking Approach
+
 1. **Multiple Runs**: Each test executed 1000 times, median reported
 2. **Warm-up**: JIT-compiled languages given warm-up runs
 3. **Memory Profiling**: Peak memory usage measured during execution
@@ -53,11 +56,13 @@ This document provides comprehensive performance analysis and benchmarking resul
 5. **Statistical Analysis**: 95% confidence intervals reported
 
 ### Test Problems Coverage
+
 1. **Problem 2894** (Easy): Mathematical optimization patterns
 2. **Problem 1639** (Hard): Dynamic programming with space optimization
 3. **Problem 1298** (Hard): Graph traversal and state management
 
 ### Test Categories
+
 - **Micro-benchmarks**: Individual function performance
 - **Algorithm efficiency**: Time/space complexity validation
 - **Memory patterns**: Allocation/deallocation analysis
@@ -66,10 +71,12 @@ This document provides comprehensive performance analysis and benchmarking resul
 ## 📈 Problem-Specific Analysis
 
 ### Problem 2894: Divisible and Non-divisible Sums Difference
+
 **Type**: Mathematical, O(1) optimization possible
 **Input Range**: n, m ∈ [1, 1000]
 
 #### Performance Results
+
 | Language | Time (μs) | Memory (KB) | Compilation (ms) | Lines of Code |
 |----------|-----------|-------------|------------------|---------------|
 | C++ | 0.08 | 1.2 | 245 | 15 |
@@ -79,22 +86,26 @@ This document provides comprehensive performance analysis and benchmarking resul
 | Python | 0.28 | 1.5 | 0 | 8 |
 
 #### Analysis
+
 - **Mathematical optimization**: All languages benefit equally from O(1) formula
 - **JIT advantage**: JavaScript shows good performance due to V8 optimization
 - **Memory efficiency**: Rust's zero-cost abstractions shine
 - **Development time**: Python's conciseness evident
 
 #### Scaling Behavior
+
 ```
 Input Size vs Execution Time (constant due to O(1) algorithm):
 All languages: ~O(1) regardless of input size
 ```
 
 ### Problem 1639: Number of Ways to Form Target String Given a Dictionary
+
 **Type**: Dynamic Programming, memory-intensive
 **Input Range**: words.length ∈ [1, 1000], target.length ∈ [1, 1000]
 
 #### Performance Results
+
 | Language | Time (ms) | Memory (MB) | Peak Memory (MB) | Cache Misses |
 |----------|-----------|-------------|------------------|--------------|
 | C++ | 95-120 | 45-55 | 58 | Low |
@@ -106,6 +117,7 @@ All languages: ~O(1) regardless of input size
 #### Detailed Performance Breakdown
 
 **Small Input** (words: 10, target: 5 chars):
+
 ```
 C++:        12μs, 2.1KB
 Rust:       15μs, 2.3KB
@@ -115,6 +127,7 @@ Python:     67μs, 2.5KB
 ```
 
 **Medium Input** (words: 100, target: 20 chars):
+
 ```
 C++:        1.2ms, 15KB
 Rust:       1.4ms, 17KB
@@ -124,6 +137,7 @@ Python:     5.9ms, 19KB
 ```
 
 **Large Input** (words: 1000, target: 50 chars):
+
 ```
 C++:        245ms, 12.5MB
 Rust:       268ms, 13.1MB
@@ -133,10 +147,12 @@ Python:     678ms, 14.8MB
 ```
 
 ### Problem 1061: Lexicographically Smallest Equivalent String
+
 **Type**: Union Find, String Processing
 **Input Range**: s1.length = s2.length ∈ [1, 1000], baseStr.length ∈ [0, 1000]
 
 #### Performance Results
+
 | Language   | Time (ms) | Memory (MB) | Peak Memory (MB) | Cache Misses |
 |------------|-----------|-------------|------------------|--------------|
 | C++        | 2–4       | 1.2         | 1.2              | Very Low     |
@@ -146,15 +162,18 @@ Python:     678ms, 14.8MB
 | Python     | 12–18     | 1.8         | 1.8              | Medium       |
 
 #### Scaling Behavior
+
 ```
 Linear in (|s1| + |baseStr|); near-constant per-character cost due to union-find overhead.
 ```
 
 ### Problem 1061: Lexicographically Smallest Equivalent String
+
 **Type**: Union Find, String Processing
 **Input Range**: s1.length = s2.length ∈ [1, 1000], baseStr.length ∈ [0, 1000]
 
 #### Performance Results
+
 | Language   | Time (ms) | Memory (MB) | Peak Memory (MB) | Cache Misses |
 |------------|-----------|-------------|------------------|--------------|
 | C++        | 2–4       | 1.2         | 1.2              | Very Low     |
@@ -164,11 +183,13 @@ Linear in (|s1| + |baseStr|); near-constant per-character cost due to union-find
 | Python     | 12–18     | 1.8         | 1.8              | Medium       |
 
 #### Scaling Behavior
+
 ```
 Linear in (|s1| + |baseStr|); near-constant per-character cost due to union-find overhead.
 ```
 
 #### Memory Access Patterns
+
 - **C++**: Excellent cache locality with contiguous memory layout
 - **Rust**: Similar to C++ with additional safety checks
 - **Java**: GC overhead visible in memory spikes
@@ -176,10 +197,12 @@ Linear in (|s1| + |baseStr|); near-constant per-character cost due to union-find
 - **Python**: Object overhead significant for large data structures
 
 ### Problem 1298: Maximum Candies You Can Get from Boxes
+
 **Type**: Graph Traversal/BFS, state management intensive
 **Input Range**: boxes.length ∈ [1, 1000], state complexity varies
 
 #### Performance Results
+
 | Language | Time (ms) | Memory (MB) | Peak Memory (MB) | Cache Misses |
 |----------|-----------|-------------|------------------|--------------|
 | C++ | 15-25 | 8-12 | 15 | Very Low |
@@ -191,6 +214,7 @@ Linear in (|s1| + |baseStr|); near-constant per-character cost due to union-find
 #### Detailed Performance Breakdown
 
 **Small Input** (10 boxes, simple dependencies):
+
 ```
 C++:        450μs, 3.2KB
 Rust:       520μs, 3.8KB
@@ -200,6 +224,7 @@ Python:     1.1ms, 3.9KB
 ```
 
 **Medium Input** (100 boxes, moderate dependencies):
+
 ```
 C++:        8.5ms, 28KB
 Rust:       10.2ms, 32KB
@@ -209,6 +234,7 @@ Python:     31.4ms, 35KB
 ```
 
 **Large Input** (1000 boxes, complex dependencies):
+
 ```
 C++:        95ms, 280KB
 Rust:       110ms, 320KB
@@ -220,6 +246,7 @@ Python:     385ms, 350KB
 #### Algorithm-Specific Analysis
 
 **BFS Traversal Performance**:
+
 - **C++**: Excellent unordered_set performance, minimal overhead
 - **Rust**: HashMap efficiency with memory safety guarantees
 - **Java**: HashSet optimization with good JIT compilation
@@ -227,6 +254,7 @@ Python:     385ms, 350KB
 - **Python**: Dict/set operations optimized but interpreter overhead
 
 **Memory Usage Patterns**:
+
 ```
 State Tracking Memory (1000 boxes):
 C++:        280KB (3 unordered_sets + queue)
@@ -237,6 +265,7 @@ Python:     350KB (3 sets + list, efficient object storage)
 ```
 
 **Key Performance Insights**:
+
 1. **Set Operations**: Critical for this problem's state management
 2. **Queue Performance**: BFS requires efficient queue operations
 3. **Memory Locality**: Important for cache performance with state tracking
@@ -245,6 +274,7 @@ Python:     350KB (3 sets + list, efficient object storage)
 #### Cross-Language Comparison Notes
 
 **Strengths by Language**:
+
 - **C++**: Fastest execution, optimal memory usage
 - **Rust**: Memory safety with near-C++ performance
 - **Java**: Excellent JIT optimization for repeated operations
@@ -252,6 +282,7 @@ Python:     350KB (3 sets + list, efficient object storage)
 - **Python**: Clean implementation, reasonable performance for size
 
 **Optimization Opportunities**:
+
 - **Bit manipulation**: For small n, bit operations could reduce memory
 - **Custom data structures**: Could optimize specific access patterns
 - **Parallel processing**: State updates could potentially be parallelized
@@ -260,19 +291,23 @@ Python:     350KB (3 sets + list, efficient object storage)
 ## 🏃‍♂️ Language Performance Profiles
 
 ### C++ Profile
+
 **Strengths**:
+
 - Zero-overhead abstractions
 - Excellent compiler optimizations
 - Direct memory management
 - Predictable performance
 
 **Performance Characteristics**:
+
 - **Startup time**: Fast (no runtime initialization)
 - **Steady state**: Consistently fastest
 - **Memory usage**: Minimal overhead
 - **Predictability**: Very high
 
 **Optimization Opportunities**:
+
 ```cpp
 // 1. Use reserve() for vectors
 vector<int> result;
@@ -290,19 +325,23 @@ T fast_pow(T base, int exp);  // compile-time optimization
 ```
 
 ### Rust Profile
+
 **Strengths**:
+
 - Memory safety without garbage collection
 - Zero-cost abstractions
 - Excellent optimization by LLVM
 - Fearless concurrency
 
 **Performance Characteristics**:
+
 - **Startup time**: Fast (compiled binary)
 - **Steady state**: Near C++ performance
 - **Memory usage**: Minimal with safety guarantees
 - **Predictability**: High
 
 **Optimization Opportunities**:
+
 ```rust
 // 1. Use iterators for functional programming
 nums.iter().filter(|&&x| x > 0).map(|&x| x * 2).collect()
@@ -318,19 +357,23 @@ fn process_data(data: &[i32]) -> i32 {  // borrow instead of move
 ```
 
 ### Java Profile
+
 **Strengths**:
+
 - JIT compilation optimizations
 - Mature ecosystem and libraries
 - Automatic memory management
 - Platform independence
 
 **Performance Characteristics**:
+
 - **Startup time**: Slower due to JVM initialization
 - **Steady state**: Good after warm-up
 - **Memory usage**: Higher due to object overhead
 - **Predictability**: Medium (GC pauses)
 
 **Optimization Opportunities**:
+
 ```java
 // 1. Use primitive arrays when possible
 int[] nums = new int[n];  // vs Integer[]
@@ -346,19 +389,23 @@ StringBuilder sb = new StringBuilder();
 ```
 
 ### JavaScript Profile
+
 **Strengths**:
+
 - V8 engine optimizations
 - JIT compilation benefits
 - Dynamic typing flexibility
 - Rapid development cycle
 
 **Performance Characteristics**:
+
 - **Startup time**: Very fast (interpreted)
 - **Steady state**: Surprisingly good for hot code
 - **Memory usage**: Efficient for objects
 - **Predictability**: Medium (GC and JIT variations)
 
 **Optimization Opportunities**:
+
 ```javascript
 // 1. Use typed arrays for numerical data
 const nums = new Int32Array(n);
@@ -374,19 +421,23 @@ const result = nums.filter(x => x > 0).map(x => x * 2);
 ```
 
 ### Python Profile
+
 **Strengths**:
+
 - Extremely readable and maintainable
 - Rich standard library
 - Excellent for prototyping
 - Strong community support
 
 **Performance Characteristics**:
+
 - **Startup time**: Fast (interpreted)
 - **Steady state**: Slower due to interpretation overhead
 - **Memory usage**: Higher due to object model
 - **Predictability**: High (no JIT surprises)
 
 **Optimization Opportunities**:
+
 ```python
 # 1. Use list comprehensions
 result = [x * 2 for x in nums if x > 0]
@@ -408,6 +459,7 @@ nums = np.array(nums, dtype=np.int32)
 ### Memory Allocation Patterns
 
 #### Stack vs Heap Usage
+
 | Language | Stack Preference | Heap Management | GC Overhead |
 |----------|------------------|-----------------|-------------|
 | C++ | High | Manual | None |
@@ -417,6 +469,7 @@ nums = np.array(nums, dtype=np.int32)
 | Python | Low | Automatic | 10-25% |
 
 #### Memory Layout Efficiency
+
 ```
 Typical integer array (1000 elements):
 
@@ -430,7 +483,9 @@ Python:     28,000+ bytes (object overhead per integer)
 ### Memory Access Patterns
 
 #### Cache Performance
+
 **L1 Cache Hit Rates** (64KB, typical workload):
+
 - C++: 95-98%
 - Rust: 95-97%
 - Java: 90-95%
@@ -438,6 +493,7 @@ Python:     28,000+ bytes (object overhead per integer)
 - Python: 80-90%
 
 **Memory Bandwidth Utilization**:
+
 - C++: 80-95% (excellent locality)
 - Rust: 80-90% (similar to C++)
 - Java: 60-80% (object overhead)
@@ -447,6 +503,7 @@ Python:     28,000+ bytes (object overhead per integer)
 ## ⚙️ Compilation and Runtime Overhead
 
 ### Compilation Time Analysis
+
 | Language | Small Project | Medium Project | Large Project |
 |----------|---------------|----------------|---------------|
 | C++ | 0.5s | 15s | 300s+ |
@@ -456,6 +513,7 @@ Python:     28,000+ bytes (object overhead per integer)
 | Python | 0s (interpreted) | 0s | 0s |
 
 ### Runtime Initialization
+
 | Language | JVM/Runtime Startup | First Execution | Steady State |
 |----------|---------------------|-----------------|--------------|
 | C++ | 0ms | Immediate | Immediate |
@@ -469,61 +527,76 @@ Python:     28,000+ bytes (object overhead per integer)
 ### When to Choose Each Language
 
 #### C++
+
 **Best for**:
+
 - High-frequency trading systems
 - Game engines and real-time graphics
 - System-level programming
 - Performance-critical algorithms
 
 **Considerations**:
+
 - Higher development time
 - Memory management complexity
 - Steeper learning curve
 
 #### Rust
+
 **Best for**:
+
 - System programming with safety requirements
 - Concurrent/parallel applications
 - WebAssembly targets
 - Security-critical applications
 
 **Considerations**:
+
 - Steep learning curve (borrow checker)
 - Longer compilation times
 - Smaller ecosystem (growing rapidly)
 
 #### Java
+
 **Best for**:
+
 - Enterprise applications
 - Large team development
 - Cross-platform requirements
 - Long-running server applications
 
 **Considerations**:
+
 - Higher memory usage
 - JVM warm-up time
 - GC pause considerations
 
 #### JavaScript
+
 **Best for**:
+
 - Web development (full-stack)
 - Rapid prototyping
 - I/O-intensive applications
 - Cross-platform desktop apps (Electron)
 
 **Considerations**:
+
 - Single-threaded nature
 - Type safety concerns
 - Performance variability
 
 #### Python
+
 **Best for**:
+
 - Data science and machine learning
 - Scripting and automation
 - Rapid prototyping
 - Educational purposes
 
 **Considerations**:
+
 - Performance limitations
 - GIL for CPU-bound tasks
 - Runtime dependency management
@@ -533,6 +606,7 @@ Python:     28,000+ bytes (object overhead per integer)
 ### Performance Measurement Tools
 
 #### C++
+
 ```cpp
 // High-resolution timing
 #include <chrono>
@@ -544,6 +618,7 @@ auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - star
 ```
 
 #### Rust
+
 ```rust
 // Using built-in timing
 use std::time::Instant;
@@ -557,6 +632,7 @@ use criterion::{black_box, criterion_group, criterion_main, Criterion};
 ```
 
 #### Java
+
 ```java
 // Simple timing
 long start = System.nanoTime();
@@ -572,6 +648,7 @@ public int benchmarkMethod() {
 ```
 
 #### JavaScript
+
 ```javascript
 // Performance API
 const start = performance.now();
@@ -586,6 +663,7 @@ console.timeEnd('operation');
 ```
 
 #### Python
+
 ```python
 # timeit module for accurate timing
 import timeit
@@ -603,6 +681,7 @@ cProfile.run('solution.solve(input)')
 ### Memory Profiling
 
 #### Tools by Language
+
 - **C++**: Valgrind (memcheck), AddressSanitizer
 - **Rust**: Built-in memory safety, cargo-instruments
 - **Java**: JProfiler, VisualVM, Java Flight Recorder
@@ -612,6 +691,7 @@ cProfile.run('solution.solve(input)')
 ### Statistical Analysis
 
 #### Benchmarking Best Practices
+
 1. **Multiple runs**: Minimum 100 iterations for stable results
 2. **Warm-up**: Allow JIT compilers to optimize
 3. **Statistical methods**: Report median, not mean (outlier resistance)
@@ -621,13 +701,17 @@ cProfile.run('solution.solve(input)')
 ## 📊 Conclusion
 
 ### Performance Summary
+
 The performance analysis reveals clear patterns:
+
 - **Compiled languages** (C++, Rust) dominate in raw performance
 - **JIT-compiled languages** (Java, JavaScript) offer good performance after warm-up
 - **Interpreted languages** (Python) prioritize development speed over execution speed
 
 ### Choosing the Right Tool
+
 Performance is just one factor in language selection. Consider:
+
 - **Development team expertise**
 - **Project timeline and maintenance requirements**
 - **Performance requirements vs development speed trade-offs**
@@ -638,7 +722,7 @@ The "best" language depends on your specific use case, team, and requirements. T
 
 ---
 
-*Last Updated: May 27, 2025*  
+*Last Updated: May 27, 2025*
 *Benchmark Environment: Intel i7-10700K, 32GB RAM, Ubuntu 22.04*
 
 ### Problem 1190: Reverse Substrings Between Each Pair of Parentheses
@@ -653,7 +737,6 @@ The "best" language depends on your specific use case, team, and requirements. T
 
 **Analysis**: Performance analysis pending - please run benchmarks and update.
 
-
 ### Problem 1717: Maximum Score From Removing Substrings
 
 | Language | Time Complexity | Space Complexity | Runtime | Memory |
@@ -665,7 +748,6 @@ The "best" language depends on your specific use case, team, and requirements. T
 | Rust | O(n) | O(1) | TBD ms | TBD MB |
 
 **Analysis**: Performance analysis pending - please run benchmarks and update.
-
 
 ### Problem 2751: Robot Collisions
 
@@ -679,7 +761,6 @@ The "best" language depends on your specific use case, team, and requirements. T
 
 **Analysis**: Performance analysis pending - please run benchmarks and update.
 
-
 ### Problem 726: Number of Atoms
 
 | Language | Time Complexity | Space Complexity | Runtime | Memory |
@@ -692,7 +773,6 @@ The "best" language depends on your specific use case, team, and requirements. T
 
 **Analysis**: Performance analysis pending - please run benchmarks and update.
 
-
 ### Problem 1061: Lexicographically Smallest Equivalent String
 
 | Language | Time Complexity | Space Complexity | Runtime | Memory |
@@ -704,4 +784,3 @@ The "best" language depends on your specific use case, team, and requirements. T
 | Rust | O(n) | O(1) | TBD ms | TBD MB |
 
 **Analysis**: Performance analysis pending - please run benchmarks and update.
-

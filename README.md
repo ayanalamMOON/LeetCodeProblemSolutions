@@ -1,5 +1,4 @@
 
-
 # 🚀 LeetCode Problem Solutions Repository
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -50,69 +49,70 @@ LANGUAGE_GUIDE.md
 PERFORMANCE_ANALYSIS.md
 README.md
 Daily_Problems/
-	DailyProblem4/
-		Problem.md
-		InCPP.cpp
-		InJava.java
-		InPython.py
-		InJS.js
-		InRust.rs
-		Procedure.md
-	DailyProblem7/
-		Problem.md
-		InCPP.cpp
-		InJava.java
-		InPython.py
-		InJS.js
-		InRust.rs
-		Procedure.md
-	DailyProblem1/
-		Problem.md
-		InCPP.cpp
-		InC.c
-		InJava.java
-		InPython.py
-		Procedure.md
-	DailyProblem6/
-		Problem.md
-		InCPP.cpp
-		InJava.java
-		InPython.py
-		InJS.js
-		InRust.rs
-		Procedure.md
-	DailyProblem2/
-		Problem.md
-		InJava.java
-		InPython.py
-		InRust.rs
-	DailyProblem3/
-		Problem.md
-		InCPP.cpp
-		InC.c
-		InJava.java
-		InPython.py
-		InJS.js
-		InRust.rs
-		Procedure.md
-	DailyProblem5/
-		Problem.md
-		InCPP.cpp
-		InJava.java
-		InPython.py
-		InJS.js
-		InRust.rs
-		Procedure.md
+ DailyProblem4/
+  Problem.md
+  InCPP.cpp
+  InJava.java
+  InPython.py
+  InJS.js
+  InRust.rs
+  Procedure.md
+ DailyProblem7/
+  Problem.md
+  InCPP.cpp
+  InJava.java
+  InPython.py
+  InJS.js
+  InRust.rs
+  Procedure.md
+ DailyProblem1/
+  Problem.md
+  InCPP.cpp
+  InC.c
+  InJava.java
+  InPython.py
+  Procedure.md
+ DailyProblem6/
+  Problem.md
+  InCPP.cpp
+  InJava.java
+  InPython.py
+  InJS.js
+  InRust.rs
+  Procedure.md
+ DailyProblem2/
+  Problem.md
+  InJava.java
+  InPython.py
+  InRust.rs
+ DailyProblem3/
+  Problem.md
+  InCPP.cpp
+  InC.c
+  InJava.java
+  InPython.py
+  InJS.js
+  InRust.rs
+  Procedure.md
+ DailyProblem5/
+  Problem.md
+  InCPP.cpp
+  InJava.java
+  InPython.py
+  InJS.js
+  InRust.rs
+  Procedure.md
 Regular_Practice_Problems/
-	Problem2/
-		Problem.md
-	Problem1/
-		Problem.md
+ Problem2/
+  Problem.md
+ Problem1/
+  Problem.md
 ```
 
 ## 🎯 Problem Categories
 
 ### Daily Problems
+
 | Problem | Title | Difficulty | Topics | Languages |
 |---------|-------|------------|--------|-----------|
 | [1061](Daily_Problems/DailyProblem7/) | Lexicographically Smallest Equivalent String | Medium | Union Find, String | C++, Java, Python, JS, Rust |
@@ -120,6 +120,7 @@ Regular_Practice_Problems/
 | [1298](Daily_Problems/DailyProblem6/) | Maximum Candies You Can Get from Boxes | Hard | BFS, DFS, Graph | C++, Java, Python, JS, Rust |
 
 ### Practice Problems
+
 | Problem | Title | Difficulty | Topics | Languages |
 |---------|-------|------------|--------|-----------|
 | [1639](Rgegular_Practice_Problems/Problem1/) | Number of Ways to Form a Target String | Hard | Dynamic Programming, String | C++, Java, Python, JS, Rust |
@@ -127,6 +128,7 @@ Regular_Practice_Problems/
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - **C++**: GCC 9+ or Clang 10+
 - **Java**: JDK 11+
 - **Python**: Python 3.8+
@@ -136,6 +138,7 @@ Regular_Practice_Problems/
 ### Running Solutions
 
 #### C++
+
 ```bash
 cd Daily_Problems/DailyProblem5/
 g++ -std=c++17 -O2 inC++.cpp -o solution
@@ -143,6 +146,7 @@ g++ -std=c++17 -O2 inC++.cpp -o solution
 ```
 
 #### Java
+
 ```bash
 cd Daily_Problems/DailyProblem5/
 javac InJava.java
@@ -150,18 +154,21 @@ java InJava
 ```
 
 #### Python
+
 ```bash
 cd Daily_Problems/DailyProblem5/
 python InPython.py
 ```
 
 #### JavaScript
+
 ```bash
 cd Daily_Problems/DailyProblem5/
 node InJS.js
 ```
 
 #### Rust
+
 ```bash
 cd Daily_Problems/DailyProblem5/
 rustc InRust.rs -O
@@ -171,6 +178,7 @@ rustc InRust.rs -O
 ## 📝 Documentation Structure
 
 Each problem folder contains:
+
 - **Problem.md**: Complete problem statement, examples, and constraints
 - **Procedure.md**: Detailed solution approach, complexity analysis, and optimizations
 - **Solution files**: Implementations in all supported languages with:
@@ -182,6 +190,7 @@ Each problem folder contains:
 ## 🔧 Features
 
 ### Multi-Language Support
+
 - **C++**: High-performance implementations with STL optimization
 - **Java**: Enterprise-ready solutions with strong type safety
 - **Python**: Pythonic code with emphasis on readability
@@ -189,12 +198,14 @@ Each problem folder contains:
 - **Rust**: Memory-safe implementations with zero-cost abstractions
 
 ### Comprehensive Analysis
+
 - **Time Complexity**: Big O analysis for all approaches
 - **Space Complexity**: Memory usage optimization strategies
 - **Performance Benchmarks**: Real-world execution time comparisons
 - **Cross-Language Comparison**: Detailed performance metrics
 
 ### Educational Value
+
 - **Step-by-Step Explanations**: Detailed solution breakdowns
 - **Multiple Approaches**: Different algorithmic strategies for each problem
 - **Optimization Techniques**: Language-specific performance improvements
@@ -203,6 +214,7 @@ Each problem folder contains:
 ## 📈 Performance Highlights
 
 ### Problem 2894 (Easy - Math)
+
 | Language | Time (μs) | Memory (KB) | Approach |
 |----------|-----------|-------------|----------|
 | C++ | 8 | 1.2 | O(1) Mathematical |
@@ -212,6 +224,7 @@ Each problem folder contains:
 | Python | 28 | 1.5 | O(1) Mathematical |
 
 ### Problem 1639 (Hard - DP)
+
 | Language | Time (ms) | Memory (MB) | Approach |
 |----------|-----------|-------------|----------|
 | C++ | 95-120 | 45-55 | Space-Optimized DP |
@@ -221,6 +234,7 @@ Each problem folder contains:
 | Python | 250-300 | 50-60 | Space-Optimized DP |
 
 ### Problem 1061 (Medium - Union Find)
+
 | Language | Time (ms) | Memory (MB) | Approach |
 |----------|-----------|-------------|----------|
 | C++ | 2-4 | 1.2-1.8 | Union Find with Path Compression |
@@ -232,12 +246,14 @@ Each problem folder contains:
 ## 🎨 Code Quality Standards
 
 ### Formatting and Style
+
 - **Consistent naming conventions** across all languages
 - **Comprehensive comments** explaining complex logic
 - **Modular design** with reusable components
 - **Error handling** for edge cases
 
 ### Testing Strategy
+
 - **Unit tests** for individual functions
 - **Integration tests** for complete solutions
 - **Edge case validation** (empty inputs, large datasets)
@@ -254,12 +270,14 @@ Each problem folder contains:
 ## 📚 Learning Resources
 
 ### Problem-Solving Patterns
+
 - **Dynamic Programming**: State design and optimization techniques
 - **Mathematical Optimization**: Converting iterative to closed-form solutions
 - **Space Optimization**: Reducing memory complexity without sacrificing time
 - **Language-Specific Features**: Leveraging unique language capabilities
 
 ### Algorithm Categories Covered
+
 - ✅ **Mathematical Algorithms**: Arithmetic sequences, modular arithmetic
 - ✅ **Dynamic Programming**: 2D DP, space optimization, memoization
 - ✅ **Graph Algorithms**: BFS traversal, state management
@@ -281,18 +299,21 @@ This repository includes comprehensive documentation for different aspects:
 ## �🚧 Roadmap
 
 ### Short Term (Next 30 days)
+
 - [ ] Add 10 more daily problems
 - [ ] Implement binary search problems
 - [ ] Add graph algorithm problems
 - [ ] Create automated testing framework
 
 ### Medium Term (Next 90 days)
+
 - [ ] Add sliding window problems
 - [ ] Implement tree and binary search tree problems
 - [ ] Create performance dashboard
 - [ ] Add problem difficulty progression guide
 
 ### Long Term (Next 6 months)
+
 - [ ] Reach 100 solved problems
 - [ ] Add advanced data structures (Segment Tree, Fenwick Tree)
 - [ ] Create interactive problem selector
@@ -301,12 +322,14 @@ This repository includes comprehensive documentation for different aspects:
 ## 🤝 Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
+
 - Adding new problems
 - Improving existing solutions
 - Reporting bugs
 - Suggesting optimizations
 
 ### Contribution Areas
+
 - **New Problem Solutions**: Add solutions for unsolved problems
 - **Language Additions**: Implement solutions in additional languages
 - **Performance Optimization**: Improve existing solution efficiency
