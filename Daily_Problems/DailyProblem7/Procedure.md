@@ -13,8 +13,8 @@ This is a **Medium** problem that involves:
 
 ```mermaid
 flowchart TD
-    A[Start: s1, s2, baseStr] --> B[Initialize Union Find Structure]
-    B --> B1[parent[i] = i for all 26 characters<br/>Each character is its own parent initially]
+    A["Start: s1, s2, baseStr"] --> B["Initialize Union Find Structure"]
+    B --> B1["parent[i] = i for all 26 characters\nEach character is its own parent initially"]
     B1 --> C[Process Equivalence Pairs]
     C --> C1[For each i in s1.length]
     C1 --> C2[Union s1[i] and s2[i]]
@@ -34,7 +34,7 @@ flowchart TD
     F1 --> F2[Replace with mapped equivalent]
     F2 --> G{More characters?}
     G -->|Yes| F1
-    G -->|No| H[Return Result String]
+    G -->|No| H["Return Result String"]
 
     style A fill:#e1f5fe
     style H fill:#c8e6c9
@@ -44,8 +44,8 @@ flowchart TD
 
 ```mermaid
 graph TB
-    subgraph "Union Find Operations"
-        A1[Find(x)] --> B1{parent[x] == x?}
+    subgraph Union_Find_Operations
+        A1["Find(x)"] --> B1{"parent[x] == x?"}
         B1 -->|Yes| C1[Return x]
         B1 -->|No| D1[parent[x] = Find(parent[x])]
         D1 --> E1[Return parent[x]]
@@ -57,8 +57,8 @@ graph TB
         D2 -->|No| F2[Already connected]
     end
 
-    subgraph "Example: s1='abc', s2='cde'"
-        G1[Initial: a→a, b→b, c→c, d→d, e→e] --> H1[Union(a,c): a→a, c→a]
+    subgraph Example_abc_cde
+        G1["Initial: a->a, b->b, c->c, d->d, e->e"] --> H1["Union(a,c): a->a, c->a"]
         H1 --> I1[Union(b,d): b→b, d→b]
         I1 --> J1[Union(c,e): c→a, e→a]
         J1 --> K1[Final groups: {a,c,e}, {b,d}]
