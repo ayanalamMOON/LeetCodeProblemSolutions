@@ -32,12 +32,12 @@ A comprehensive collection of LeetCode problem solutions implemented in multiple
 
 | Metric | Count |
 |--------|-------|
-| **Total Problems Solved** | 8 |
+| **Total Problems Solved** | 9 |
 | **Programming Languages** | 5 (C++, Java, Python, JavaScript, Rust) |
-| **Daily Problems** | 6 |
+| **Daily Problems** | 7 |
 | **Practice Problems** | 2 |
-| **Documentation Files** | 17 |
-| **Solution Files** | 40+ |
+| **Documentation Files** | 19 |
+| **Solution Files** | 45+ |
 
 ## 🗂️ Repository Structure
 
@@ -107,8 +107,8 @@ Regular_Practice_Problems/
 ### Daily Problems
 | Problem | Title | Difficulty | Topics | Languages |
 |---------|-------|------------|--------|-----------|
+| [1061](Daily_Problems/DailyProblem7/) | Lexicographically Smallest Equivalent String | Medium | Union Find, String | C++, Java, Python, JS, Rust |
 | [2894](Daily_Problems/DailyProblem5/) | Divisible and Non-divisible Sums Difference | Easy | Math, Array | C++, Java, Python, JS, Rust |
-| [1298](Daily_Problems/DailyProblem6/) | Maximum Candies You Can Get from Boxes | Hard | BFS, DFS, Graph | C++, Java, Python, JS, Rust |
 | [1298](Daily_Problems/DailyProblem6/) | Maximum Candies You Can Get from Boxes | Hard | BFS, DFS, Graph | C++, Java, Python, JS, Rust |
 
 ### Practice Problems
@@ -212,14 +212,14 @@ Each problem folder contains:
 | JavaScript | 180-220 | 55-65 | Space-Optimized DP |
 | Python | 250-300 | 50-60 | Space-Optimized DP |
 
-### Problem 1298 (Hard - BFS)
+### Problem 1061 (Medium - Union Find)
 | Language | Time (ms) | Memory (MB) | Approach |
 |----------|-----------|-------------|----------|
-| C++ | 15-25 | 8-12 | BFS with Hash Sets |
-| Rust | 18-28 | 10-14 | BFS with Hash Sets |
-| Java | 25-35 | 15-20 | BFS with Hash Sets |
-| JavaScript | 35-50 | 12-18 | BFS with Sets |
-| Python | 45-65 | 10-15 | BFS with Sets |
+| C++ | 2-4 | 1.2-1.8 | Union Find with Path Compression |
+| Rust | 3-5 | 1.5-2.0 | Union Find with Path Compression |
+| Java | 5-8 | 2.5-3.5 | Union Find with Path Compression |
+| JavaScript | 8-12 | 2.0-2.8 | Union Find with Path Compression |
+| Python | 12-18 | 1.8-2.5 | Union Find with Path Compression |
 
 ## 🎨 Code Quality Standards
 

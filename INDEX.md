@@ -24,31 +24,40 @@ This document serves as a comprehensive index and navigation guide for the LeetC
 #### Medium Problems
 | Problem # | Title | Topics | Folder | Status |
 |-----------|-------|--------|--------|--------|
-| TBD | Future Medium Problems | Various | TBD | 🔄 Planned |
+| 1061 | [Lexicographically Smallest Equivalent String](Daily_Problems/DailyProblem7/) | Union Find, String | DailyProblem7 | ✅ Complete |
 
 #### Hard Problems
 | Problem # | Title | Topics | Folder | Status |
 |-----------|-------|--------|--------|--------|
 | 1639 | [Number of Ways to Form a Target String](Rgegular_Practice_Problems/Problem1/) | Dynamic Programming, String | Problem1 | ✅ Complete |
 | 1298 | [Maximum Candies You Can Get from Boxes](Daily_Problems/DailyProblem6/) | BFS, DFS, Graph | DailyProblem6 | ✅ Complete |
-| 1298 | [Maximum Candies You Can Get from Boxes](Daily_Problems/DailyProblem6/) | BFS, DFS, Graph | DailyProblem6 | ✅ Complete |
 
 ### By Topic Category
 
 #### Mathematical Problems
+
 | Problem # | Title | Difficulty | Key Concepts | Optimization |
 |-----------|-------|------------|--------------|--------------|
 | 2894 | Divisible and Non-divisible Sums | Easy | Arithmetic Series, Modular Math | O(n) → O(1) |
 
 #### Dynamic Programming
+
 | Problem # | Title | Difficulty | DP Type | Space Optimization |
 |-----------|-------|------------|---------|-------------------|
 | 1639 | Target String Formation | Hard | 2D DP | O(m×n) → O(m) |
 
 #### String Processing
+
 | Problem # | Title | Difficulty | String Techniques | Pattern |
 |-----------|-------|------------|-------------------|---------|
+| 1061 | Lexicographically Smallest Equivalent String | Medium | Union Find, Character Equivalence | Character Mapping |
 | 1639 | Target String Formation | Hard | Character Frequency | Dictionary Matching |
+
+#### Union Find / Disjoint Set
+
+| Problem # | Title | Difficulty | Union Find Techniques | Optimization |
+|-----------|-------|------------|---------------------|--------------|
+| 1061 | Lexicographically Smallest Equivalent String | Medium | Path Compression, Lexicographical Union | Character Equivalence Classes |
 
 #### Array Manipulation
 | Problem # | Title | Difficulty | Array Techniques | Optimization |
@@ -68,7 +77,7 @@ Located in `Daily_Problems/`
 | DailyProblem4 | TBD | TBD | TBD | 🔄 Placeholder |
 | DailyProblem5 | 2894 | Divisible and Non-divisible Sums | May 2025 | ✅ Complete |
 | DailyProblem6 | 1298 | Maximum Candies You Can Get from Boxes | June 2025 | ✅ Complete |
-| DailyProblem6 | 1298 | Maximum Candies You Can Get from Boxes | June 2025 | ✅ Complete |
+| DailyProblem7 | 1061 | Lexicographically Smallest Equivalent String | June 2025 | ✅ Complete |
 
 #### Practice Problems
 Located in `Rgegular_Practice_Problems/`
@@ -118,7 +127,8 @@ Located in `Rgegular_Practice_Problems/`
 | 2894 | ✅ | ✅ | ✅ | ✅ | ✅ | 5/5 |
 | 1639 | ✅ | ✅ | ✅ | ✅ | ✅ | 5/5 |
 | 1298 | ✅ | ✅ | ✅ | ✅ | ✅ | 5/5 |
-| **Total** | **3/3** | **3/3** | **3/3** | **3/3** | **3/3** | **15/15** |
+| 1061 | ✅ | ✅ | ✅ | ✅ | ✅ | 5/5 |
+| **Total** | **4/4** | **4/4** | **4/4** | **4/4** | **4/4** | **20/20** |
 
 ### Language-Specific Features Demonstrated
 

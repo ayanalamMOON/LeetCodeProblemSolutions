@@ -3,16 +3,16 @@
  * @brief LeetCode 1061: Lexicographically Smallest Equivalent String
  * @author LeetCode Problem Solutions
  * @date 2024
- * 
+ *
  * Problem: Given two strings s1 and s2 of same length and a string baseStr,
  * find the lexicographically smallest equivalent string of baseStr using
  * character equivalence relationships from s1 and s2.
- * 
+ *
  * Approach: Union Find with Path Compression
  * - Use Union Find to manage character equivalence classes
  * - Always make lexicographically smaller character the root
  * - Apply path compression for optimal performance
- * 
+ *
  * Time Complexity: O(α(26) × (|s1| + |baseStr|)) ≈ O(|s1| + |baseStr|)
  * Space Complexity: O(26) = O(1)
  */
@@ -24,10 +24,10 @@
  * @param {string} baseStr - Base string to transform
  * @return {string} Lexicographically smallest equivalent string
  */
-var smallestEquivalentString = function(s1, s2, baseStr) {
+var smallestEquivalentString = function (s1, s2, baseStr) {
     // Initialize Union Find structure - each character maps to itself
-    const parent = Array.from({length: 26}, (_, i) => i);
-    
+    const parent = Array.from({ length: 26 }, (_, i) => i);
+
     /**
      * Find operation with path compression
      * @param {number} x - Character index (0-25 for 'a'-'z')
@@ -39,7 +39,7 @@ var smallestEquivalentString = function(s1, s2, baseStr) {
         }
         return parent[x];
     };
-    
+
     /**
      * Union operation with lexicographical preference
      * @param {number} x - First character index
@@ -56,12 +56,12 @@ var smallestEquivalentString = function(s1, s2, baseStr) {
             }
         }
     };
-    
+
     // Build equivalence relationships
     for (let i = 0; i < s1.length; i++) {
         unite(s1.charCodeAt(i) - 97, s2.charCodeAt(i) - 97); // 97 = 'a'.charCodeAt(0)
     }
-    
+
     // Transform baseStr using equivalence mappings
     let result = '';
     for (const c of baseStr) {
@@ -69,7 +69,7 @@ var smallestEquivalentString = function(s1, s2, baseStr) {
         const rootIdx = find(charIdx);
         result += String.fromCharCode(97 + rootIdx);
     }
-    
+
     return result;
 };
 
@@ -80,7 +80,7 @@ class UnionFindSolution {
     constructor() {
         this.parent = null;
     }
-    
+
     /**
      * Find operation with path compression
      * @param {number} x - Character index
@@ -92,7 +92,7 @@ class UnionFindSolution {
         }
         return this.parent[x];
     }
-    
+
     /**
      * Union operation with lexicographical preference
      * @param {number} x - First character index
@@ -108,7 +108,7 @@ class UnionFindSolution {
             }
         }
     }
-    
+
     /**
      * Main solution method
      * @param {string} s1 - First equivalence string
@@ -118,13 +118,13 @@ class UnionFindSolution {
      */
     smallestEquivalentString(s1, s2, baseStr) {
         // Initialize parent array
-        this.parent = Array.from({length: 26}, (_, i) => i);
-        
+        this.parent = Array.from({ length: 26 }, (_, i) => i);
+
         // Build equivalence relationships
         for (let i = 0; i < s1.length; i++) {
             this.unite(s1.charCodeAt(i) - 97, s2.charCodeAt(i) - 97);
         }
-        
+
         // Transform baseStr
         return baseStr
             .split('')
@@ -138,34 +138,34 @@ class UnionFindSolution {
  */
 function runTests() {
     console.log("Testing Function-based approach:");
-    
+
     // Test Case 1
     const result1 = smallestEquivalentString("parker", "morris", "parser");
     console.log(`Test 1: ${result1}`); // Expected: "makkek"
-    
+
     // Test Case 2
     const result2 = smallestEquivalentString("hello", "world", "hold");
     console.log(`Test 2: ${result2}`); // Expected: "hdld"
-    
+
     // Test Case 3
     const result3 = smallestEquivalentString("leetcode", "programs", "sourcecode");
     console.log(`Test 3: ${result3}`); // Expected: "aauaaaaada"
-    
+
     // Edge Case: No equivalences
     const result4 = smallestEquivalentString("aa", "aa", "abc");
     console.log(`Test 4: ${result4}`); // Expected: "abc"
-    
+
     console.log("\nTesting Class-based approach:");
     const solution = new UnionFindSolution();
-    
+
     // Test Case 1
     const classResult1 = solution.smallestEquivalentString("parker", "morris", "parser");
     console.log(`Class Test 1: ${classResult1}`); // Expected: "makkek"
-    
+
     // Test Case 2
     const classResult2 = solution.smallestEquivalentString("hello", "world", "hold");
     console.log(`Class Test 2: ${classResult2}`); // Expected: "hdld"
-    
+
     // Performance and edge case tests
     const testCases = [
         // All characters map to 'a'
@@ -177,14 +177,14 @@ function runTests() {
         // Long transitive chain
         ["abcdefg", "bcdefgh", "ghijklm", "aaaaaaa"],
     ];
-    
+
     console.log("\nEdge case tests:");
     testCases.forEach(([s1, s2, baseStr, expected], i) => {
         const result = smallestEquivalentString(s1, s2, baseStr);
         console.log(`Edge Test ${i + 1}: ${result} (expected: ${expected})`);
         console.assert(result === expected, `Test ${i + 1} failed`);
     });
-    
+
     console.log("All tests completed!");
 }
 

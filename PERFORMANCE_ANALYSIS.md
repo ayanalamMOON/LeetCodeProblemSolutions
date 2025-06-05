@@ -132,6 +132,42 @@ JavaScript: 445ms, 15.2MB
 Python:     678ms, 14.8MB
 ```
 
+### Problem 1061: Lexicographically Smallest Equivalent String
+**Type**: Union Find, String Processing
+**Input Range**: s1.length = s2.length ∈ [1, 1000], baseStr.length ∈ [0, 1000]
+
+#### Performance Results
+| Language   | Time (ms) | Memory (MB) | Peak Memory (MB) | Cache Misses |
+|------------|-----------|-------------|------------------|--------------|
+| C++        | 2–4       | 1.2         | 1.2              | Very Low     |
+| Rust       | 3–5       | 1.5         | 1.5              | Very Low     |
+| Java       | 5–8       | 2.5         | 2.5              | Low          |
+| JavaScript | 8–12      | 2.0         | 2.0              | Medium       |
+| Python     | 12–18     | 1.8         | 1.8              | Medium       |
+
+#### Scaling Behavior
+```
+Linear in (|s1| + |baseStr|); near-constant per-character cost due to union-find overhead.
+```
+
+### Problem 1061: Lexicographically Smallest Equivalent String
+**Type**: Union Find, String Processing
+**Input Range**: s1.length = s2.length ∈ [1, 1000], baseStr.length ∈ [0, 1000]
+
+#### Performance Results
+| Language   | Time (ms) | Memory (MB) | Peak Memory (MB) | Cache Misses |
+|------------|-----------|-------------|------------------|--------------|
+| C++        | 2–4       | 1.2         | 1.2              | Very Low     |
+| Rust       | 3–5       | 1.5         | 1.5              | Very Low     |
+| Java       | 5–8       | 2.5         | 2.5              | Low          |
+| JavaScript | 8–12      | 2.0         | 2.0              | Medium       |
+| Python     | 12–18     | 1.8         | 1.8              | Medium       |
+
+#### Scaling Behavior
+```
+Linear in (|s1| + |baseStr|); near-constant per-character cost due to union-find overhead.
+```
+
 #### Memory Access Patterns
 - **C++**: Excellent cache locality with contiguous memory layout
 - **Rust**: Similar to C++ with additional safety checks

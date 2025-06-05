@@ -3,16 +3,16 @@
  * @brief LeetCode 1061: Lexicographically Smallest Equivalent String
  * @author LeetCode Problem Solutions
  * @date 2024
- * 
+ *
  * Problem: Given two strings s1 and s2 of same length and a string baseStr,
  * find the lexicographically smallest equivalent string of baseStr using
  * character equivalence relationships from s1 and s2.
- * 
+ *
  * Approach: Union Find with Path Compression
  * - Use Union Find to manage character equivalence classes
  * - Always make lexicographically smaller character the root
  * - Apply path compression for optimal performance
- * 
+ *
  * Time Complexity: O(α(26) × (|s1| + |baseStr|)) ≈ O(|s1| + |baseStr|)
  * Space Complexity: O(26) = O(1)
  */
@@ -28,12 +28,12 @@ impl UnionFind {
             parent: (0..26).collect(),
         }
     }
-    
+
     /// Find operation with path compression
-    /// 
+    ///
     /// # Arguments
     /// * `x` - Character index (0-25 for 'a'-'z')
-    /// 
+    ///
     /// # Returns
     /// Root representative of x's equivalence class
     fn find(&mut self, x: usize) -> usize {
@@ -42,9 +42,9 @@ impl UnionFind {
         }
         self.parent[x]
     }
-    
+
     /// Union operation with lexicographical preference
-    /// 
+    ///
     /// # Arguments
     /// * `x` - First character index
     /// * `y` - Second character index
@@ -64,27 +64,27 @@ impl UnionFind {
 
 impl Solution {
     /// Find lexicographically smallest equivalent string
-    /// 
+    ///
     /// # Arguments
     /// * `s1` - First equivalence string
-    /// * `s2` - Second equivalence string  
+    /// * `s2` - Second equivalence string
     /// * `base_str` - Base string to transform
-    /// 
+    ///
     /// # Returns
     /// Lexicographically smallest equivalent string
     pub fn smallest_equivalent_string(s1: String, s2: String, base_str: String) -> String {
         let mut uf = UnionFind::new();
-        
+
         // Build equivalence relationships
         let s1_chars: Vec<char> = s1.chars().collect();
         let s2_chars: Vec<char> = s2.chars().collect();
-        
+
         for i in 0..s1_chars.len() {
             let x = (s1_chars[i] as usize) - ('a' as usize);
             let y = (s2_chars[i] as usize) - ('a' as usize);
             uf.unite(x, y);
         }
-        
+
         // Transform baseStr using equivalence mappings
         base_str
             .chars()
@@ -106,7 +106,7 @@ mod standalone {
         }
         parent[x]
     }
-    
+
     /// Union operation with lexicographical preference (standalone version)
     fn unite(parent: &mut Vec<usize>, x: usize, y: usize) {
         let root_x = find(parent, x);
@@ -119,21 +119,21 @@ mod standalone {
             }
         }
     }
-    
+
     /// Alternative implementation using standalone functions
     pub fn smallest_equivalent_string_alt(s1: String, s2: String, base_str: String) -> String {
         let mut parent: Vec<usize> = (0..26).collect();
-        
+
         // Build equivalence relationships
         let s1_bytes = s1.as_bytes();
         let s2_bytes = s2.as_bytes();
-        
+
         for i in 0..s1_bytes.len() {
             let x = (s1_bytes[i] - b'a') as usize;
             let y = (s2_bytes[i] - b'a') as usize;
             unite(&mut parent, x, y);
         }
-        
+
         // Transform baseStr
         base_str
             .bytes()
@@ -164,7 +164,7 @@ impl TestCase {
 /// Test driver function
 fn main() {
     println!("Testing LeetCode 1061: Lexicographically Smallest Equivalent String");
-    
+
     let test_cases = vec![
         TestCase::new("parker", "morris", "parser", "makkek"),
         TestCase::new("hello", "world", "hold", "hdld"),
@@ -175,7 +175,7 @@ fn main() {
         TestCase::new("ab", "cd", "", ""), // Empty base string
         TestCase::new("abcdefg", "bcdefgh", "ghijklm", "aaaaaaa"), // Long chain
     ];
-    
+
     println!("\n=== Testing struct-based implementation ===");
     for (i, test) in test_cases.iter().enumerate() {
         let result = Solution::smallest_equivalent_string(
@@ -183,14 +183,14 @@ fn main() {
             test.s2.to_string(),
             test.base_str.to_string(),
         );
-        
+
         let status = if result == test.expected { "✓ PASS" } else { "✗ FAIL" };
-        println!("Test {}: {} (got: '{}', expected: '{}')", 
+        println!("Test {}: {} (got: '{}', expected: '{}')",
                  i + 1, status, result, test.expected);
-        
+
         assert_eq!(result, test.expected, "Test {} failed", i + 1);
     }
-    
+
     println!("\n=== Testing standalone implementation ===");
     for (i, test) in test_cases.iter().enumerate() {
         let result = standalone::smallest_equivalent_string_alt(
@@ -198,23 +198,23 @@ fn main() {
             test.s2.to_string(),
             test.base_str.to_string(),
         );
-        
+
         let status = if result == test.expected { "✓ PASS" } else { "✗ FAIL" };
-        println!("Alt Test {}: {} (got: '{}', expected: '{}')", 
+        println!("Alt Test {}: {} (got: '{}', expected: '{}')",
                  i + 1, status, result, test.expected);
-        
+
         assert_eq!(result, test.expected, "Alt test {} failed", i + 1);
     }
-    
+
     println!("\n=== Performance Test ===");
     let large_s1 = "abcdefghijklmnopqrstuvwxyz".repeat(1000);
     let large_s2 = "bcdefghijklmnopqrstuvwxyza".repeat(1000);
     let large_base = "zyxwvutsrqponmlkjihgfedcba".repeat(100);
-    
+
     let start = std::time::Instant::now();
     let _result = Solution::smallest_equivalent_string(large_s1, large_s2, large_base);
     let duration = start.elapsed();
-    
+
     println!("Large input processing time: {:?}", duration);
     println!("All tests completed successfully! 🎉");
 }
@@ -225,7 +225,7 @@ struct Solution;
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     #[test]
     fn test_basic_cases() {
         assert_eq!(
@@ -236,7 +236,7 @@ mod tests {
             ),
             "makkek"
         );
-        
+
         assert_eq!(
             Solution::smallest_equivalent_string(
                 "hello".to_string(),
@@ -246,7 +246,7 @@ mod tests {
             "hdld"
         );
     }
-    
+
     #[test]
     fn test_edge_cases() {
         // No equivalences
@@ -258,7 +258,7 @@ mod tests {
             ),
             "abc"
         );
-        
+
         // Empty base string
         assert_eq!(
             Solution::smallest_equivalent_string(
@@ -269,7 +269,7 @@ mod tests {
             ""
         );
     }
-    
+
     #[test]
     fn test_standalone_implementation() {
         assert_eq!(
