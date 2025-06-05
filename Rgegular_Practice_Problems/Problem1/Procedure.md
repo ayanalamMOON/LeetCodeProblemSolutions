@@ -3,43 +3,94 @@
 ## Problem Analysis
 
 This is a **Hard** dynamic programming problem that involves:
+
 - String manipulation
 - Character frequency counting
 - Dynamic programming with 2D state space
 - Modular arithmetic
 
+## Algorithm Visualization
+
+```mermaid
+flowchart TD
+    A[Start: words array, target string] --> B[Precompute Character Frequencies]
+    B --> B1[For each position j in words<br/>Count frequency of each character]
+    B1 --> C[Initialize DP Table]
+    C --> C1[dp[0][j] = 1 for all j<br/>Empty string can be formed in 1 way]
+
+    C1 --> D[Fill DP Table]
+    D --> E{For each position j<br/>in words}
+    E --> F{For each character i<br/>in target}
+    F --> G[Skip current position:<br/>dp[i][j] += dp[i][j-1]]
+    G --> H{Can use position j<br/>for target[i-1]?}
+    H -->|Yes| I[Use current position:<br/>dp[i][j] += dp[i-1][j-1] × freq[j][target[i-1]]]
+    H -->|No| J[Continue to next]
+    I --> J
+    J --> K{More characters<br/>in target?}
+    K -->|Yes| F
+    K -->|No| L{More positions<br/>in words?}
+    L -->|Yes| E
+    L -->|No| M[Return dp[target.length][words[0].length]]
+
+    style A fill:#e1f5fe
+    style M fill:#c8e6c9
+    style B fill:#fff3e0
+    style D fill:#f3e5f5
+```
+
+```mermaid
+graph LR
+    subgraph "State Transition Logic"
+        A1[dp[i][j-1]] -->|Skip position j| B1[dp[i][j]]
+        A2[dp[i-1][j-1]] -->|Use position j| B1
+        A3[freq[j][char]] -->|Multiply by frequency| B1
+    end
+
+    subgraph "Example Walkthrough"
+        C1[Position 0: a=2, b=1] --> D1[Ways to form 'a': 2]
+        C2[Position 1: b=1, c=2] --> D2[Ways to form 'ab': 2]
+        C3[Position 2: b=1, c=2] --> D3[Continue processing...]
+        C4[Position 3: a=2, b=1] --> D4[Final result: 6 ways]
+    end
+```
+
 ## Solution Approaches
 
 ### Approach 1: Dynamic Programming with Character Frequency
 
-**Core Insight**: 
+**Core Insight**:
+
 - We need to count ways to form target string using characters from specific positions in words
 - Once we use position k, positions 0 to k become unavailable for future use
 - This suggests a 2D DP approach
 
 **Algorithm Steps**:
+
 1. **Precompute character frequencies** at each position across all words
 2. **Define DP state**: `dp[i][j]` = number of ways to form first `i` characters of target using first `j` positions
 3. **Base case**: `dp[0][j] = 1` (empty string can be formed in 1 way)
 4. **Transition**: For each position and target character, either skip or use the position
 5. **Final answer**: `dp[target.length()][word_length]`
 
-**Time Complexity**: O(target.length() × word_length × words.length())  
+**Time Complexity**: O(target.length() × word_length × words.length())
 **Space Complexity**: O(target.length() × word_length + word_length × 26)
 
 ### Mathematical Formula
 
 For each state `dp[i][j]`:
+
 - **Skip current position**: `dp[i][j] += dp[i][j-1]`
 - **Use current position**: If `target[i-1]` exists at position `j-1`, then `dp[i][j] += dp[i-1][j-1] × frequency[j-1][target[i-1]]`
 
 ## Implementation Details
 
 ### Key Data Structures
+
 1. **Frequency Array**: `freq[pos][char]` stores count of character `char` at position `pos`
 2. **DP Table**: `dp[i][j]` stores number of ways to form first `i` chars using first `j` positions
 
 ### Optimization Techniques
+
 1. **Space Optimization**: Can reduce to 1D DP by processing in reverse order
 2. **Early Termination**: If remaining positions < remaining target characters, return 0
 3. **Modular Arithmetic**: Use MOD = 10^9 + 7 to prevent overflow
@@ -56,6 +107,7 @@ For each state `dp[i][j]`:
 **Input**: `words = ["acca","bbbb","caca"]`, `target = "aba"`
 
 **Step 1**: Compute frequency table
+
 ```
 Position 0: a=2, b=1, c=0
 Position 1: a=0, b=1, c=2
@@ -64,6 +116,7 @@ Position 3: a=2, b=1, c=0
 ```
 
 **Step 2**: Fill DP table
+
 ```
 dp[0][*] = 1 (base case)
 dp[1][1] = freq[0]['a'] = 2 (ways to form "a")
@@ -102,13 +155,14 @@ dp[1][2] = dp[1][1] + 0 = 2 (no 'a' at pos 1)
 ## LeetCode Submission Formats
 
 ### C++ Solution (Space-Optimized)
+
 ```cpp
 class Solution {
 public:
     int numWaysToFormTarget(vector<string>& words, string target) {
         const int MOD = 1e9 + 7;
         int m = target.length(), n = words[0].length();
-        
+
         // Precompute character frequencies
         vector<vector<long long>> freq(n, vector<long long>(26, 0));
         for (const string& word : words) {
@@ -116,10 +170,10 @@ public:
                 freq[j][word[j] - 'a']++;
             }
         }
-        
+
         vector<long long> dp(m + 1, 0);
         dp[0] = 1;
-        
+
         for (int j = 0; j < n; j++) {
             for (int i = min(m, j + 1); i >= 1; i--) {
                 int charIdx = target[i - 1] - 'a';
@@ -128,19 +182,20 @@ public:
                 }
             }
         }
-        
+
         return dp[m];
     }
 };
 ```
 
 ### Java Solution (Space-Optimized)
+
 ```java
 class Solution {
     public int numWaysToFormTarget(String[] words, String target) {
         final int MOD = 1_000_000_007;
         int m = target.length(), n = words[0].length();
-        
+
         // Precompute character frequencies
         long[][] freq = new long[n][26];
         for (String word : words) {
@@ -148,10 +203,10 @@ class Solution {
                 freq[j][word.charAt(j) - 'a']++;
             }
         }
-        
+
         long[] dp = new long[m + 1];
         dp[0] = 1;
-        
+
         for (int j = 0; j < n; j++) {
             for (int i = Math.min(m, j + 1); i >= 1; i--) {
                 int charIdx = target.charAt(i - 1) - 'a';
@@ -160,44 +215,46 @@ class Solution {
                 }
             }
         }
-        
+
         return (int) dp[m];
     }
 }
 ```
 
 ### Python Solution (Space-Optimized)
+
 ```python
 class Solution:
     def numWaysToFormTarget(self, words: List[str], target: str) -> int:
         MOD = 10**9 + 7
         m, n = len(target), len(words[0])
-        
+
         # Precompute character frequencies
         freq = [[0] * 26 for _ in range(n)]
         for word in words:
             for j, char in enumerate(word):
                 freq[j][ord(char) - ord('a')] += 1
-        
+
         dp = [0] * (m + 1)
         dp[0] = 1
-        
+
         for j in range(n):
             for i in range(min(m, j + 1), 0, -1):
                 char_idx = ord(target[i - 1]) - ord('a')
                 if freq[j][char_idx] > 0:
                     dp[i] = (dp[i] + dp[i - 1] * freq[j][char_idx]) % MOD
-        
+
         return dp[m]
 ```
 
 ### JavaScript Solution (Space-Optimized)
+
 ```javascript
 var numWaysToFormTarget = function(words, target) {
     const MOD = 1e9 + 7;
     const m = target.length;
     const n = words[0].length;
-    
+
     // Precompute character frequencies
     const freq = Array(n).fill().map(() => Array(26).fill(0));
     for (const word of words) {
@@ -205,10 +262,10 @@ var numWaysToFormTarget = function(words, target) {
             freq[j][word.charCodeAt(j) - 97]++;
         }
     }
-    
+
     const dp = Array(m + 1).fill(0);
     dp[0] = 1;
-    
+
     for (let j = 0; j < n; j++) {
         for (let i = Math.min(m, j + 1); i >= 1; i--) {
             const charIdx = target.charCodeAt(i - 1) - 97;
@@ -217,12 +274,13 @@ var numWaysToFormTarget = function(words, target) {
             }
         }
     }
-    
+
     return dp[m];
 };
 ```
 
 ### Rust Solution (Space-Optimized)
+
 ```rust
 impl Solution {
     pub fn num_ways_to_form_target(words: Vec<String>, target: String) -> i32 {
@@ -230,7 +288,7 @@ impl Solution {
         let m = target.len();
         let n = words[0].len();
         let target_chars: Vec<char> = target.chars().collect();
-        
+
         // Precompute character frequencies
         let mut freq = vec![vec![0i64; 26]; n];
         for word in &words {
@@ -238,10 +296,10 @@ impl Solution {
                 freq[j][(ch as u8 - b'a') as usize] += 1;
             }
         }
-        
+
         let mut dp = vec![0i64; m + 1];
         dp[0] = 1;
-        
+
         for j in 0..n {
             for i in (1..=m.min(j + 1)).rev() {
                 let char_idx = (target_chars[i - 1] as u8 - b'a') as usize;
@@ -250,48 +308,56 @@ impl Solution {
                 }
             }
         }
-        
+
         dp[m] as i32
     }
 }
 ```
 
-## Cross-Language Performance Comparison
+## Algorithm Visualization
 
-| Language | Time (ms) | Memory (MB) | Code Lines | Readability | LeetCode Rank |
-|----------|-----------|-------------|------------|-------------|---------------|
-| C++ | 95-120 | 45-55 | 25 | ⭐⭐⭐⭐ | 🥇 Fastest |
-| Rust | 100-130 | 50-60 | 30 | ⭐⭐⭐⭐ | 🥈 Safe & Fast |
-| Java | 120-150 | 60-70 | 28 | ⭐⭐⭐⭐⭐ | 🥉 Readable |
-| JavaScript | 180-220 | 55-65 | 22 | ⭐⭐⭐⭐⭐ | 🏅 Concise |
-| Python | 250-300 | 50-60 | 20 | ⭐⭐⭐⭐⭐ | 🏅 Most Readable |
+```mermaid
+flowchart TD
+    A[Start: words array, target string] --> B[Precompute Character Frequencies]
+    B --> B1[For each position j in words<br/>Count frequency of each character]
+    B1 --> C[Initialize DP Table]
+    C --> C1[dp[0][j] = 1 for all j<br/>Empty string can be formed in 1 way]
 
-### Language-Specific Optimizations
+    C1 --> D[Fill DP Table]
+    D --> E{For each position j<br/>in words}
+    E --> F{For each character i<br/>in target}
+    F --> G[Skip current position:<br/>dp[i][j] += dp[i][j-1]]
+    G --> H{Can use position j<br/>for target[i-1]?}
+    H -->|Yes| I[Use current position:<br/>dp[i][j] += dp[i-1][j-1] × freq[j][target[i-1]]]
+    H -->|No| J[Continue to next]
+    I --> J
+    J --> K{More characters<br/>in target?}
+    K -->|Yes| F
+    K -->|No| L{More positions<br/>in words?}
+    L -->|Yes| E
+    L -->|No| M[Return dp[target.length][words[0].length]]
 
-**C++:**
-- Uses `vector<vector<long long>>` for frequency table
-- Early termination with `min(m, j + 1)` in inner loop
-- Manual modulo operations for best performance
+    style A fill:#e1f5fe
+    style M fill:#c8e6c9
+    style B fill:#fff3e0
+    style D fill:#f3e5f5
+```
 
-**Java:**
-- Uses `long[][]` for frequency to avoid overflow
-- Leverages `Math.min()` for cleaner code
-- Strong type safety with automatic boxing
+```mermaid
+graph LR
+    subgraph "State Transition"
+        A1[dp[i][j-1]] -->|Skip position j| B1[dp[i][j]]
+        A2[dp[i-1][j-1]] -->|Use position j| B1
+        A3[freq[j][char]] -->|Multiply by frequency| B1
+    end
 
-**Python:**
-- Uses list comprehensions for concise frequency initialization
-- Leverages `range(min(m, j + 1), 0, -1)` for reverse iteration
-- Most readable with built-in modulo operator
-
-**JavaScript:**
-- Uses `Array.fill().map()` pattern for 2D array initialization
-- Utilizes `charCodeAt()` for character to index conversion
-- Modern ES6+ features for cleaner syntax
-
-**Rust:**
-- Memory-safe with zero-cost abstractions
-- Uses `chars().enumerate()` for iterator-based character processing
-- Compile-time guarantees prevent runtime errors
+    subgraph "Example: words=['acca','bbbb','caca'], target='aba'"
+        C1[Position 0: a=2, b=1, c=0] --> D1[dp[1][1] = 2]
+        C2[Position 1: a=0, b=1, c=2] --> D2[dp[2][2] = 2]
+        C3[Position 2: a=0, b=1, c=2] --> D3[Continue...]
+        C4[Position 3: a=2, b=1, c=0] --> D4[dp[3][4] = 6]
+    end
+```
 
 ## Memory Usage Analysis
 
@@ -334,6 +400,7 @@ impl Solution {
 ## Production Considerations
 
 ### When to Use Each Language
+
 - **C++**: High-performance competitive programming, system-level applications
 - **Rust**: Systems programming with safety guarantees, concurrent applications
 - **Java**: Enterprise applications, Android development, large team projects
@@ -341,6 +408,7 @@ impl Solution {
 - **Python**: Data science, machine learning, rapid prototyping, scripting
 
 ### Optimization Tips for Each Language
+
 1. **C++**: Use `reserve()` for vectors, avoid unnecessary copies
 2. **Rust**: Leverage iterators and pattern matching for idiomatic code
 3. **Java**: Use primitive arrays where possible, consider `ArrayList` capacity
