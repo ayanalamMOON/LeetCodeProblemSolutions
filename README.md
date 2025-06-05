@@ -58,6 +58,14 @@ Daily_Problems/
 		InJS.js
 		InRust.rs
 		Procedure.md
+	DailyProblem7/
+		Problem.md
+		InCPP.cpp
+		InJava.java
+		InPython.py
+		InJS.js
+		InRust.rs
+		Procedure.md
 	DailyProblem1/
 		Problem.md
 		InCPP.cpp

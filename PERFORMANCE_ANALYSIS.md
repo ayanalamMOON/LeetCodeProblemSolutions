@@ -692,3 +692,16 @@ The "best" language depends on your specific use case, team, and requirements. T
 
 **Analysis**: Performance analysis pending - please run benchmarks and update.
 
+
+### Problem 1061: Lexicographically Smallest Equivalent String
+
+| Language | Time Complexity | Space Complexity | Runtime | Memory |
+|----------|----------------|------------------|---------|--------|
+| C++ | O(n) | O(1) | TBD ms | TBD MB |
+| Java | O(n) | O(1) | TBD ms | TBD MB |
+| Python | O(n) | O(1) | TBD ms | TBD MB |
+| JavaScript | O(n) | O(1) | TBD ms | TBD MB |
+| Rust | O(n) | O(1) | TBD ms | TBD MB |
+
+**Analysis**: Performance analysis pending - please run benchmarks and update.
+
